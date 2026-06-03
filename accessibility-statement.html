@@ -36,12 +36,41 @@
   .contact-box p { color: #b8c4ae; }
   .contact-box a { color: #d4e0cc; border-bottom-color: #6a8a60; }
   .contact-box a:hover { border-bottom-color: #d4e0cc; }
-  footer { background: #3b4a36; padding: 32px 48px; text-align: center; border-top: 1px solid #2e3d2a; }
-  footer p { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #7a9470; margin: 0; }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #5a5048; text-decoration: none; border-bottom: none; }
+  .nav-links a:hover { color: #2a2420; }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: #3b4a36; transition: transform 0.3s, opacity 0.3s; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 150; background: #EFF3EE; flex-direction: column; align-items: center; justify-content: center; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 9vw, 3rem); font-weight: 300; color: #2C2C28; text-decoration: none; padding: 0.75rem 0; font-style: italic; transition: color 0.2s; border-bottom: 1px solid #E0D7CC; width: 72%; text-align: center; }
+  .mobile-menu a:hover { color: #3b4a36; }
+  .mobile-menu-cta { margin-top: 2rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.72rem !important; font-weight: 500 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; font-style: normal !important; color: #fff !important; background: #3b4a36 !important; padding: 0.9rem 2rem !important; border-radius: 2px !important; border-bottom: none !important; width: auto !important; }
+  footer { background: #3b4a36; padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid #2e3d2a; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; border-bottom: none !important; }
+  .footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.3); }
+  .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; border-bottom: none !important; }
+  .footer-links a:hover { color: rgba(255,255,255,0.6); }
+  .footer-social { display: flex; gap: 1rem; }
+  .footer-social a { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: border-color 0.2s, color 0.2s; border-bottom: none !important; }
+  .footer-social a:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
+  @media (max-width: 768px) {
+    nav { padding: 18px 24px; }
+    .nav-links { display: none !important; }
+    .nav-hamburger { display: flex !important; }
+    .hero { padding: 60px 24px; min-height: 260px; }
+    .content { padding: 48px 24px 80px; }
+    footer { padding: 2.5rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  }
 </style>
 </head>
 <body>
-<nav>
+<nav id="main-nav">
   <a href="https://www.sohamspaces.com/index.html" class="nav-logo">Sohamspaces</a>
   <ul class="nav-links">
     <li><a href="https://www.sohamspaces.com/index.html">Home</a></li>
@@ -49,7 +78,15 @@
     <li><a href="https://www.sohamspaces.com/about.html">About</a></li>
     <li><a href="https://www.sohamspaces.com/contact.html">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+    <a href="https://www.sohamspaces.com/index.html">Home</a>
+    <a href="https://www.sohamspaces.com/yoga_cards.html">Yoga Cards</a>
+    <a href="https://www.sohamspaces.com/about.html">About</a>
+    <a href="https://www.sohamspaces.com/contact.html">Contact</a>
+    <a href="https://www.sohamspaces.com/waitlist.html" class="mobile-menu-cta">Join the Waitlist</a>
+</div>
 <div class="hero">
   <div class="hero-eyebrow">Policies</div>
   <h1>Accessibility <em>Statement.</em></h1>
@@ -91,7 +128,40 @@
 
 </div>
 <footer>
-  <p>© 2026 Soham Spaces — Ancient Wisdom · Modern Life</p>
+  <div style="display:flex;flex-direction:column;gap:0.4rem;">
+    <a href="https://www.sohamspaces.com/index.html" class="footer-logo">Sohamspaces</a>
+    <span class="footer-tagline">Ancient wisdom for modern souls.</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.sohamspaces.com/about.html">About</a>
+    <a href="https://www.sohamspaces.com/contact.html">Contact</a>
+    <a href="https://www.sohamspaces.com/privacy-policy.html">Privacy</a>
+    <a href="https://www.sohamspaces.com/shipping-policy.html">Shipping</a>
+    <a href="https://www.sohamspaces.com/terms-conditions.html">Terms</a>
+    <a href="https://www.sohamspaces.com/Refund-policy.html">Refunds</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/sohamspaces/" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="mailto:info@sohamspaces.com" aria-label="Email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
+  </div>
 </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
 </body>
 </html>
