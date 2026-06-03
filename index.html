@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sohamspaces, ancient wisdom for modern souls. A home for yoga teachings, mindful living, and the practice of returning to yourself.">
+<meta property="og:title" content="Sohamspaces">
+<meta property="og:description" content="Ancient wisdom for modern souls.">
+<title>Sohamspaces</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sage: #8A9E87; --sage-lt: #C8D5C6; --sage-dk: #3E4E3C;
+    --sand: #F2EDE6; --sand-dk: #E0D7CC;
+    --ink: #2C2C28; --ink-mid: #4A4A44; --ink-lt: #7A7A72;
+    --cream: #FAF7F2; --gold: #B8975A; --gold-lt: #D4B87A; --white: #FFFFFF;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', system-ui, sans-serif;
+    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  html { scroll-behavior: smooth; }
+  html, body { font-family: var(--sans); background: var(--cream); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; width: 100%; margin: 0; padding: 0; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s var(--ease); }
+  nav.scrolled { border-color: var(--sand-dk); }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-dk); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+  .nav-links a.active { border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+  .nav-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--sage-dk); text-decoration: none; padding: 0.55rem 1.4rem; border-radius: 2px; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--ink); }
+  .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 8rem 2rem 6rem; position: relative; overflow: hidden; background: var(--cream); }
+  .hero-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.05; pointer-events: none; }
+  .hero-eyebrow { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+  .hero-title { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 300; line-height: 1.05; color: var(--ink); margin-bottom: 1.5rem; }
+  .hero-title em { font-style: italic; color: var(--sage-dk); }
+  .hero-sub { font-family: var(--serif); font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 300; font-style: italic; color: var(--ink-lt); max-width: 500px; line-height: 1.6; margin-bottom: 3.5rem; }
+  .hero-actions { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+  .btn-primary { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); background: var(--sage-dk); text-decoration: none; padding: 1rem 2.2rem; border-radius: 2px; transition: background 0.2s, transform 0.2s; }
+  .btn-primary:hover { background: var(--ink); transform: translateY(-1px); }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+  .btn-ghost:hover { color: var(--ink); }
+  .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .scroll-hint span { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-lt); }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollpulse 2s ease-in-out infinite; }
+  @keyframes scrollpulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+  .intro { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+  .section-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
+  .intro-title { font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 2rem; }
+  .intro-title em { font-style: italic; color: var(--sage-dk); }
+  .intro-body { font-size: 0.9rem; font-weight: 300; line-height: 2; color: var(--ink-mid); margin-bottom: 1.5rem; max-width: 44ch; }
+  .intro-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--sand-dk); }
+  .intro-stat { background: var(--sand); padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .intro-stat:nth-child(2) { background: var(--cream); }
+  .intro-stat:nth-child(3) { background: var(--cream); }
+  .intro-stat:nth-child(4) { background: var(--sage-dk); }
+  .stat-num { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--ink); line-height: 1; }
+  .intro-stat:nth-child(4) .stat-num { color: var(--white); }
+  .stat-label { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-lt); }
+  .intro-stat:nth-child(4) .stat-label { color: var(--sage-lt); }
+  .feature-strip { background: var(--sage-dk); padding: 5rem 4rem; }
+  .feature-strip-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .feature-quote { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; font-style: italic; color: var(--white); line-height: 1.5; margin-bottom: 1.5rem; }
+  .feature-attr { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-lt); }
+  .offerings { padding: 8rem 4rem; background: var(--sand); }
+  .offerings-header { text-align: center; margin-bottom: 5rem; }
+  .offerings-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; color: var(--ink); line-height: 1.2; margin-top: 1rem; }
+  .offerings-title em { font-style: italic; color: var(--sage-dk); }
+  .offerings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--sand-dk); max-width: 1000px; margin: 0 auto; }
+  .offering-card { background: var(--cream); padding: 3rem 2.5rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s; text-decoration: none; }
+  .offering-card:hover { background: var(--white); }
+  .offering-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--sand); display: flex; align-items: center; justify-content: center; }
+  .offering-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; color: var(--ink); line-height: 1.3; }
+  .offering-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.8; color: var(--ink-lt); flex: 1; }
+  .offering-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem; }
+  .philosophy { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; background: var(--cream); }
+  .philosophy-visual { position: relative; height: 480px; background: var(--sand); display: flex; align-items: center; justify-content: center; }
+  .philosophy-title { font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 2rem; margin-top: 1rem; }
+  .philosophy-title em { font-style: italic; color: var(--sage-dk); }
+  .philosophy-body { font-size: 0.9rem; font-weight: 300; line-height: 2; color: var(--ink-mid); margin-bottom: 1.5rem; }
+  footer { background: #2A3A28; border-top: 1px solid rgba(255,255,255,0.1); padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-logo { font-family: var(--serif); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-tagline { font-family: var(--serif); font-size: 0.8rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.3); }
+  .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.6); }
+  .footer-social { display: flex; gap: 1rem; }
+  .footer-social a { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+  .footer-social a:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; }
+  @media (max-width: 900px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    .intro { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
+    .offerings-grid { grid-template-columns: 1fr; }
+    .philosophy { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
+    .philosophy-visual { height: 280px; }
+    footer { padding: 2.5rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--sage-dk); transition: transform 0.3s var(--ease), opacity 0.3s; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 150; background: #EFF3EE; flex-direction: column; align-items: center; justify-content: center; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: var(--serif); font-size: clamp(2rem, 9vw, 3rem); font-weight: 300; color: var(--ink); text-decoration: none; padding: 0.75rem 0; font-style: italic; transition: color 0.2s; border-bottom: 1px solid var(--sand-dk); width: 72%; text-align: center; }
+  .mobile-menu a:hover, .mobile-menu a.active { color: var(--sage-dk); }
+  .mobile-menu-cta { margin-top: 2rem !important; font-family: var(--sans) !important; font-size: 0.72rem !important; font-weight: 500 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; font-style: normal !important; color: var(--white) !important; background: var(--sage-dk) !important; padding: 0.9rem 2rem !important; border-radius: 2px !important; border-bottom: none !important; width: auto !important; }
+  @media (max-width: 900px) {
+    .nav-links { display: none !important; }
+    .nav-cta { display: none !important; }
+    .nav-back { display: none !important; }
+    .nav-hamburger { display: flex !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="nav-logo">Sohamspaces</a>
+  <ul class="nav-links">
+    <li><a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="active">Home</a></li>
+    <li><a href="https://adrimaia2000-del.github.io/sohamspaces/yoga_cards.html">Yoga Cards</a></li>
+    <li><a href="https://adrimaia2000-del.github.io/sohamspaces/about.html">About</a></li>
+    <li><a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html">Contact</a></li>
+  </ul>
+  <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="nav-cta">Join the Waitlist</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="active">Home</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/yoga_cards.html">Yoga Cards</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html">About</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html">Contact</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="mobile-menu-cta">Join the Waitlist</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <svg width="600" height="600" viewBox="0 0 600 600" fill="none">
+      <circle cx="300" cy="300" r="280" stroke="#8A9E87" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="220" stroke="#8A9E87" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="160" stroke="#8A9E87" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="100" stroke="#8A9E87" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="40" stroke="#8A9E87" stroke-width="0.5"/>
+      <line x1="300" y1="20" x2="300" y2="580" stroke="#8A9E87" stroke-width="0.5"/>
+      <line x1="20" y1="300" x2="580" y2="300" stroke="#8A9E87" stroke-width="0.5"/>
+      <line x1="102" y1="102" x2="498" y2="498" stroke="#8A9E87" stroke-width="0.5"/>
+      <line x1="498" y1="102" x2="102" y2="498" stroke="#8A9E87" stroke-width="0.5"/>
+    </svg>
+  </div>
+  <p class="hero-eyebrow reveal">Ancient Wisdom · Modern Life</p>
+  <h1 class="hero-title reveal reveal-delay-1">
+    So.<em>Ham.</em><br>Spaces.
+  </h1>
+  <p class="hero-sub reveal reveal-delay-2">
+    A home for the teachings that bring you back to yourself.
+  </p>
+  <div class="hero-actions reveal reveal-delay-3">
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/yoga_cards.html" class="btn-primary">Explore the Yoga Cards</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="btn-ghost">
+      Our story
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-left">
+    <p class="section-label reveal">What is Sohamspaces</p>
+    <h2 class="intro-title reveal reveal-delay-1">
+      A space to pause,<br><em>breathe, and return.</em>
+    </h2>
+    <p class="intro-body reveal reveal-delay-2">
+      Soham is a Sanskrit mantra, "I am that." It is the sound of the breath itself,
+      the oldest teaching there is. Sohamspaces was born from a journey across
+      four countries in search of what it means to live that truth.
+    </p>
+    <p class="intro-body reveal reveal-delay-2">
+      What emerged was a collection of teachings, tools, and practices
+      to carry ancient wisdom into an ordinary day.
+    </p>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="btn-ghost reveal reveal-delay-3">
+      Read the full story
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+  <div class="intro-right reveal reveal-delay-1">
+    <div class="intro-stat"><span class="stat-num">83</span><span class="stat-label">Teaching Cards</span></div>
+    <div class="intro-stat"><span class="stat-num">4</span><span class="stat-label">Countries</span></div>
+    <div class="intro-stat"><span class="stat-num">1</span><span class="stat-label">Practice</span></div>
+    <div class="intro-stat"><span class="stat-num">∞</span><span class="stat-label">Moments of return</span></div>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="feature-strip">
+  <div class="feature-strip-inner">
+    <p class="feature-quote reveal">
+      "So Hum, I am that. The breath has always known the answer.
+      These spaces exist to help you hear it."
+    </p>
+    <p class="feature-attr reveal reveal-delay-1">, The Sohamspaces Founding Note</p>
+  </div>
+</div>
+
+<!-- OFFERINGS -->
+<section class="offerings">
+  <div class="offerings-header">
+    <p class="section-label reveal" style="justify-content:center;">What We Offer</p>
+    <h2 class="offerings-title reveal reveal-delay-1">
+      Tools for the<br><em>journey inward.</em>
+    </h2>
+  </div>
+  <div class="offerings-grid">
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/yoga_cards.html" class="offering-card reveal">
+      <div class="offering-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <rect x="2" y="1" width="14" height="16" rx="2"/>
+          <line x1="5" y1="6" x2="13" y2="6"/><line x1="5" y1="9" x2="13" y2="9"/><line x1="5" y1="12" x2="9" y2="12"/>
+        </svg>
+      </div>
+      <p class="offering-title">The Yoga Cards</p>
+      <p class="offering-desc">83 teachings gathered across Portugal, India, Bali and Malaysia. Each card sets an intention for your practice or your day.</p>
+      <span class="offering-link">Explore the deck →</span>
+    </a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="offering-card reveal reveal-delay-1">
+      <div class="offering-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <circle cx="9" cy="6" r="3"/><path d="M3 16c0-3.314 2.686-6 6-6s6 2.686 6 6"/>
+        </svg>
+      </div>
+      <p class="offering-title">The Story</p>
+      <p class="offering-desc">A journey from the Atlantic coast to the temples of Bali, and what was found along the way. The origin of every teaching in this space.</p>
+      <span class="offering-link">Read the story →</span>
+    </a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="offering-card reveal reveal-delay-2">
+      <div class="offering-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M9 2l1.5 4h4l-3 2.5 1 4L9 10l-3.5 2.5 1-4L3 6h4L9 2z"/>
+        </svg>
+      </div>
+      <p class="offering-title">Join the Waitlist</p>
+      <p class="offering-desc">Be the first to know when the deck is ready to ship. One email. No noise. Just the moment it arrives.</p>
+      <span class="offering-link">Reserve your spot →</span>
+    </a>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-visual reveal">
+    <svg width="220" height="220" viewBox="0 0 220 220" fill="none" opacity="0.2">
+      <circle cx="110" cy="110" r="105" stroke="#3E4E3C" stroke-width="1"/>
+      <circle cx="110" cy="110" r="75" stroke="#3E4E3C" stroke-width="1"/>
+      <circle cx="110" cy="110" r="45" stroke="#3E4E3C" stroke-width="1"/>
+      <ellipse cx="110" cy="72" rx="14" ry="40" fill="#3E4E3C" opacity="0.4"/>
+      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(45 110 110)"/>
+      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(90 110 110)"/>
+      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(135 110 110)"/>
+      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(180 110 110)"/>
+      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(225 110 110)"/>
+      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(270 110 110)"/>
+      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(315 110 110)"/>
+      <circle cx="110" cy="110" r="14" fill="#3E4E3C" opacity="0.3"/>
+    </svg>
+  </div>
+  <div>
+    <p class="section-label reveal">Our Philosophy</p>
+    <h2 class="philosophy-title reveal reveal-delay-1">
+      Wisdom is not<br>acquired. It is<br><em>remembered.</em>
+    </h2>
+    <p class="philosophy-body reveal reveal-delay-2">
+      The oldest teachings of yoga are not complicated. They were never meant to be.
+      They were designed to be carried, in the body, in the breath, in a single word
+      held with attention throughout a day.
+    </p>
+    <p class="philosophy-body reveal reveal-delay-2">
+      Sohamspaces exists to make that carrying easier. Not to add more to your life,
+      but to help you return to what has always been there.
+    </p>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="btn-primary reveal reveal-delay-3">Meet the founder</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;flex-direction:column;gap:0.4rem;">
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="footer-logo">Sohamspaces</a>
+    <span class="footer-tagline">Ancient wisdom for modern souls.</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html">About</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html">Contact</a>
+    <a href="https://www.sohamspaces.com/privacy-policy">Privacy</a>
+    <a href="https://www.sohamspaces.com/shipping-policy">Shipping</a>
+    <a href="https://www.sohamspaces.com/terms-conditions">Terms</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/Refund-policy.html">Refunds</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/sohamspaces/" aria-label="Instagram">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="mailto:info@sohamspaces.com" aria-label="Email">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+  document.querySelectorAll('.hero .reveal').forEach((el, i) => { setTimeout(() => el.classList.add('visible'), 100 + i * 120); });
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : ''; });
+    mobileMenu.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }); });
+  }
+</script>
+</body>
+</html>

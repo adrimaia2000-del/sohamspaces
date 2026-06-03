@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The story behind Sohamspaces, a self-discovery journey from Portugal to India, Bali and Malaysia, and the teachings gathered along the way.">
+<meta property="og:title" content="About, Sohamspaces">
+<title>About, Sohamspaces</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --sage: #8A9E87; --sage-lt: #C8D5C6; --sage-dk: #3E4E3C; --sand: #F2EDE6; --sand-dk: #E0D7CC; --ink: #2C2C28; --ink-mid: #4A4A44; --ink-lt: #7A7A72; --cream: #FAF7F2; --gold: #B8975A; --gold-lt: #D4B87A; --white: #FFFFFF; --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Jost', system-ui, sans-serif; --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  html { scroll-behavior: smooth; }
+  html, body { font-family: var(--sans); background: var(--cream); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; width: 100%; margin: 0; padding: 0; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s var(--ease); }
+  nav.scrolled { border-color: var(--sand-dk); }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-dk); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+  .nav-links a.active { border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+  .nav-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--sage-dk); text-decoration: none; padding: 0.55rem 1.4rem; border-radius: 2px; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--ink); }
+  .page-hero { padding: 12rem 4rem 7rem; background: var(--sand); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: end; }
+  .section-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
+  .page-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--ink); }
+  .page-title em { font-style: italic; color: var(--sage-dk); }
+  .page-intro { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; font-style: italic; line-height: 1.65; color: var(--ink-mid); }
+  .journey { background: var(--cream); }
+  .journey-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
+  .journey-section:nth-child(even) { direction: rtl; }
+  .journey-section:nth-child(even) > * { direction: ltr; }
+  .journey-visual { background: var(--sand); display: flex; align-items: center; justify-content: center; min-height: 400px; position: relative; overflow: hidden; }
+  .journey-visual-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
+  .journey-place-name { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; font-style: italic; color: var(--ink); opacity: 0.12; position: absolute; bottom: 2rem; right: 2rem; line-height: 1; }
+  .journey-content { padding: 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .journey-num { font-family: var(--serif); font-size: 5rem; font-weight: 300; color: var(--sand-dk); line-height: 1; margin-bottom: 1.5rem; }
+  .journey-title { font-family: var(--serif); font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 1.5rem; }
+  .journey-title em { font-style: italic; color: var(--sage-dk); }
+  .journey-body { font-size: 0.88rem; font-weight: 300; line-height: 2; color: var(--ink-mid); max-width: 42ch; }
+  .founder { background: var(--sage-dk); padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
+  .founder-visual { height: 480px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; position: relative; }
+  .founder-initials { font-family: var(--serif); font-size: 8rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.08); line-height: 1; }
+  .founder-label-box { position: absolute; bottom: 2rem; left: 2rem; }
+  .founder-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--white); }
+  .founder-role { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage-lt); margin-top: 0.3rem; }
+  .founder-section-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .founder-section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--sage-lt); }
+  .founder-title { font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 2rem; }
+  .founder-title em { font-style: italic; }
+  .founder-body { font-size: 0.88rem; font-weight: 300; line-height: 2; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+  .values { padding: 8rem 4rem; background: var(--sand); }
+  .values-header { text-align: center; margin-bottom: 5rem; }
+  .values-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; color: var(--ink); line-height: 1.2; margin-top: 1rem; }
+  .values-title em { font-style: italic; color: var(--sage-dk); }
+  .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: var(--sand-dk); max-width: 1000px; margin: 0 auto; }
+  .value-item { background: var(--cream); padding: 2.5rem 2rem; }
+  .value-item:hover { background: var(--white); }
+  .value-sanskrit { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; font-style: italic; color: var(--sage-dk); margin-bottom: 0.3rem; }
+  .value-english { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .value-desc { font-size: 0.8rem; font-weight: 300; line-height: 1.8; color: var(--ink-lt); }
+  .about-cta { background: #2A3A28; padding: 7rem 4rem; text-align: center; }
+  .about-cta-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 1.5rem; margin-top: 1rem; }
+  .about-cta-title em { font-style: italic; }
+  .about-cta-sub { font-size: 0.88rem; font-weight: 300; color: rgba(255,255,255,0.5); margin-bottom: 3rem; }
+  .btn-gold { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: var(--gold); text-decoration: none; padding: 1rem 2.2rem; border-radius: 2px; transition: background 0.2s, transform 0.2s; }
+  .btn-gold:hover { background: var(--gold-lt); transform: translateY(-1px); }
+  footer { background: #2A3A28; border-top: 1px solid rgba(255,255,255,0.1); padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-logo { font-family: var(--serif); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-tagline { font-family: var(--serif); font-size: 0.8rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.3); }
+  .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.6); }
+  .footer-social { display: flex; gap: 1rem; }
+  .footer-social a { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+  .footer-social a:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; }
+  @media (max-width: 900px) { nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; } .page-hero { grid-template-columns: 1fr; padding: 8rem 2rem 4rem; gap: 2rem; } .journey-section { grid-template-columns: 1fr; } .journey-section:nth-child(even) { direction: ltr; } .journey-visual { min-height: 260px; } .journey-content { padding: 3rem 2rem; } .founder { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; } .founder-visual { height: 300px; } .values-grid { grid-template-columns: 1fr 1fr; } footer { padding: 2.5rem 1.5rem; flex-direction: column; align-items: flex-start; } }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--sage-dk); transition: transform 0.3s var(--ease), opacity 0.3s; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 150; background: #EFF3EE; flex-direction: column; align-items: center; justify-content: center; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: var(--serif); font-size: clamp(2rem, 9vw, 3rem); font-weight: 300; color: var(--ink); text-decoration: none; padding: 0.75rem 0; font-style: italic; transition: color 0.2s; border-bottom: 1px solid var(--sand-dk); width: 72%; text-align: center; }
+  .mobile-menu a:hover, .mobile-menu a.active { color: var(--sage-dk); }
+  .mobile-menu-cta { margin-top: 2rem !important; font-family: var(--sans) !important; font-size: 0.72rem !important; font-weight: 500 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; font-style: normal !important; color: var(--white) !important; background: var(--sage-dk) !important; padding: 0.9rem 2rem !important; border-radius: 2px !important; border-bottom: none !important; width: auto !important; }
+  @media (max-width: 900px) { .nav-links { display: none !important; } .nav-cta { display: none !important; } .nav-hamburger { display: flex !important; } }
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="nav-logo">Sohamspaces</a>
+  <ul class="nav-links">
+    <li><a href="https://adrimaia2000-del.github.io/sohamspaces/index.html">Home</a></li>
+    <li><a href="https://adrimaia2000-del.github.io/sohamspaces/yoga_cards.html">Yoga Cards</a></li>
+    <li><a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="active">About</a></li>
+    <li><a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html">Contact</a></li>
+  </ul>
+  <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="nav-cta">Join the Waitlist</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html">Home</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/yoga_cards.html">Yoga Cards</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="active">About</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html">Contact</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="mobile-menu-cta">Join the Waitlist</a>
+</div>
+<section class="page-hero">
+  <div class="page-hero-left">
+    <p class="section-label reveal">Our Story</p>
+    <h1 class="page-title reveal reveal-delay-1">The journey<br>that made<br><em>this space.</em></h1>
+  </div>
+  <div class="page-hero-right">
+    <p class="page-intro reveal reveal-delay-2">Sohamspaces was not planned. It emerged from a personal journey across four countries, a search for stillness that became a collection of teachings too important to keep alone.</p>
+  </div>
+</section>
+<div class="journey">
+  <div class="journey-section">
+    <div class="journey-visual">
+      <div class="journey-visual-inner"><svg width="120" height="120" viewBox="0 0 120 120" fill="none" opacity="0.3"><circle cx="60" cy="60" r="55" stroke="#3E4E3C" stroke-width="1"/><path d="M60 15 Q80 40 60 60 Q40 80 60 105" stroke="#3E4E3C" stroke-width="1" fill="none"/><path d="M15 60 Q40 40 60 60 Q80 80 105 60" stroke="#3E4E3C" stroke-width="1" fill="none"/></svg></div>
+      <span class="journey-place-name">Portugal</span>
+    </div>
+    <div class="journey-content">
+      <span class="journey-num reveal">01</span>
+      <h2 class="journey-title reveal reveal-delay-1">Portugal.<br><em>Where it began.</em></h2>
+      <p class="journey-body reveal reveal-delay-2">Growing up on the Silver Coast of Portugal, yoga was simply part of life. My mother ran her own yoga studio, and the practice was woven into daily life from the very beginning, steady and unhurried, like the Atlantic itself. Then came the decision to leave, to move to the UK for university, and with that distance came the first real question: what do I actually carry with me when everything familiar is left behind?</p>
+    </div>
+  </div>
+  <div class="journey-section">
+    <div class="journey-visual" style="background: var(--sage-lt);">
+      <div class="journey-visual-inner"><svg width="120" height="120" viewBox="0 0 120 120" fill="none" opacity="0.4"><polygon points="60,10 110,95 10,95" stroke="#3E4E3C" stroke-width="1" fill="none"/><polygon points="60,25 95,85 25,85" stroke="#3E4E3C" stroke-width="1" fill="none"/><polygon points="60,40 80,75 40,75" stroke="#3E4E3C" stroke-width="1" fill="none"/><circle cx="60" cy="60" r="8" stroke="#3E4E3C" stroke-width="1" fill="none"/></svg></div>
+      <span class="journey-place-name">India</span>
+    </div>
+    <div class="journey-content">
+      <span class="journey-num reveal">02</span>
+      <h2 class="journey-title reveal reveal-delay-1">India.<br><em>Where it deepened.</em></h2>
+      <p class="journey-body reveal reveal-delay-2">Goa, home to the oldest yoga institute in the world, founded in 1918. Teachers whose words reshaped what yoga meant, not a physical practice, but a way of seeing. The Sanskrit names for states that had no English translation. The understanding that the practice was never separate from life. The first cards were written in notebooks here.</p>
+    </div>
+  </div>
+  <div class="journey-section">
+    <div class="journey-visual" style="background: var(--sand-dk);">
+      <div class="journey-visual-inner"><svg width="120" height="120" viewBox="0 0 120 120" fill="none" opacity="0.3"><ellipse cx="60" cy="40" rx="12" ry="32" fill="#3E4E3C" opacity="0.3"/><ellipse cx="60" cy="40" rx="12" ry="32" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(40 60 60)"/><ellipse cx="60" cy="40" rx="12" ry="32" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(80 60 60)"/><ellipse cx="60" cy="40" rx="12" ry="32" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(120 60 60)"/><ellipse cx="60" cy="40" rx="12" ry="32" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(160 60 60)"/><ellipse cx="60" cy="40" rx="12" ry="32" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(200 60 60)"/><ellipse cx="60" cy="40" rx="12" ry="32" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(240 60 60)"/><ellipse cx="60" cy="40" rx="12" ry="32" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(280 60 60)"/><ellipse cx="60" cy="40" rx="12" ry="32" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(320 60 60)"/><circle cx="60" cy="60" r="10" fill="#3E4E3C" opacity="0.2"/></svg></div>
+      <span class="journey-place-name">Bali</span>
+    </div>
+    <div class="journey-content">
+      <span class="journey-num reveal">03</span>
+      <h2 class="journey-title reveal reveal-delay-1">Bali.<br><em>Where it opened.</em></h2>
+      <p class="journey-body reveal reveal-delay-2">A month of volunteering, teaching yoga on a farm and living inside the real culture. The ceremonies witnessed at dawn, the offerings, the rituals woven into every ordinary moment, the understanding that devotion is not a separate practice but the quality of attention brought to whatever is in front of you. Bali gave the teachings of presence and of beauty as something practiced, not observed.</p>
+    </div>
+  </div>
+  <div class="journey-section">
+    <div class="journey-visual" style="background: var(--sage-dk);">
+      <div class="journey-visual-inner"><svg width="120" height="120" viewBox="0 0 120 120" fill="none" opacity="0.4"><circle cx="60" cy="60" r="50" stroke="white" stroke-width="0.75"/><circle cx="60" cy="60" r="35" stroke="white" stroke-width="0.75"/><circle cx="60" cy="60" r="20" stroke="white" stroke-width="0.75"/><line x1="60" y1="10" x2="60" y2="110" stroke="white" stroke-width="0.5"/><line x1="10" y1="60" x2="110" y2="60" stroke="white" stroke-width="0.5"/><line x1="25" y1="25" x2="95" y2="95" stroke="white" stroke-width="0.5"/><line x1="95" y1="25" x2="25" y2="95" stroke="white" stroke-width="0.5"/></svg></div>
+      <span class="journey-place-name" style="color:rgba(255,255,255,0.15);">Malaysia</span>
+    </div>
+    <div class="journey-content">
+      <span class="journey-num reveal">04</span>
+      <h2 class="journey-title reveal reveal-delay-1">Malaysia.<br><em>Where it settled.</em></h2>
+      <p class="journey-body reveal reveal-delay-2">Teaching yoga in a hostel, for travellers passing through, people from every background and every level of experience. It was here that the practice became truly portable, stripped of any setting or expectation, just the teaching and whoever showed up. The realisation settled: this was never about a particular place. It had always been about what you carry inside it. The work of distilling it all into 83 cards began here.</p>
+    </div>
+  </div>
+</div>
+<section class="founder">
+  <div class="founder-visual reveal">
+    <span class="founder-initials">A.</span>
+    <div class="founder-label-box">
+      <p class="founder-name">Adriana</p>
+      <p class="founder-role">Founder, Sohamspaces</p>
+    </div>
+  </div>
+  <div>
+    <p class="founder-section-label reveal">The Founder</p>
+    <h2 class="founder-title reveal reveal-delay-1">Not a teacher.<br><em>A fellow traveller.</em></h2>
+    <p class="founder-body reveal reveal-delay-2">I didn't create Sohamspaces to teach yoga. I created it because the teachings I encountered across four countries changed how I moved through the world, and I couldn't find a way to carry them with me that felt true. The cards are the answer I made for myself, and decided to share.</p>
+    <p class="founder-body reveal reveal-delay-2">The cards are not a curriculum. They are a companion. Each one holds something I needed at a particular moment, and hope you might need too.</p>
+    <p class="founder-body reveal reveal-delay-3">If you have questions, or want to share what a card meant to you, I'd love to hear from you.</p>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html" class="btn-gold reveal reveal-delay-3">Get in touch</a>
+  </div>
+</section>
+<section class="values">
+  <div class="values-header">
+    <p class="section-label reveal" style="justify-content:center;">What We Stand For</p>
+    <h2 class="values-title reveal reveal-delay-1">Four words.<br><em>One practice.</em></h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-item reveal"><p class="value-sanskrit">Satya</p><p class="value-english">Truth</p><p class="value-desc">Everything here is rooted in lived experience, not theory. No teaching is shared that hasn't been tested.</p></div>
+    <div class="value-item reveal reveal-delay-1"><p class="value-sanskrit">Ahiṃsā</p><p class="value-english">Non-harm</p><p class="value-desc">The practice is an invitation, never a demand. You bring what you have. That is always enough.</p></div>
+    <div class="value-item reveal reveal-delay-2"><p class="value-sanskrit">Santosha</p><p class="value-english">Contentment</p><p class="value-desc">This is not a self-improvement project. It is a returning, to what you already are, beneath the noise.</p></div>
+    <div class="value-item reveal reveal-delay-3"><p class="value-sanskrit">Svādhyāya</p><p class="value-english">Self-Study</p><p class="value-desc">Every card is a mirror. The practice of looking honestly, without judgment, is the whole of it.</p></div>
+  </div>
+</section>
+<section class="about-cta">
+  <p class="section-label reveal" style="justify-content:center;color:var(--gold);">Begin Here</p>
+  <h2 class="about-cta-title reveal reveal-delay-1">Ready to carry<br><em>the teachings with you?</em></h2>
+  <p class="about-cta-sub reveal reveal-delay-2">The deck is almost ready. Join the waitlist for first access.</p>
+  <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="btn-gold reveal reveal-delay-3">Join the Waitlist</a>
+</section>
+<footer>
+  <div style="display:flex;flex-direction:column;gap:0.4rem;">
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="footer-logo">Sohamspaces</a>
+    <span class="footer-tagline">Ancient wisdom for modern souls.</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html">About</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html">Contact</a>
+    <a href="https://www.sohamspaces.com/privacy-policy">Privacy</a>
+    <a href="https://www.sohamspaces.com/shipping-policy">Shipping</a>
+    <a href="https://www.sohamspaces.com/terms-conditions">Terms</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/Refund-policy.html">Refunds</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/sohamspaces/" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="mailto:info@sohamspaces.com" aria-label="Email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+  document.querySelectorAll('.page-hero .reveal').forEach((el, i) => { setTimeout(() => el.classList.add('visible'), 100 + i * 120); });
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : ''; });
+    mobileMenu.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }); });
+  }
+</script>
+</body>
+</html>
