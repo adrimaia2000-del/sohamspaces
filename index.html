@@ -3,116 +3,924 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sohamspaces — a yoga card deck rooted in ancient wisdom for modern life. 83 teaching cards gathered across Portugal, India, Bali and Malaysia to guide your practice and your day.">
-<meta name="keywords" content="yoga cards, mindfulness cards, yoga deck, meditation cards, yoga gifts, mindfulness gifts, yoga practice, ancient wisdom, spiritual cards, intention cards">
-<meta property="og:title" content="Sohamspaces — Yoga Cards for Modern Life">
-<meta property="og:description" content="83 teaching cards rooted in ancient yoga wisdom. Set your intention, deepen your practice, and carry the teachings with you.">
+<meta name="description" content="83 yoga cards carrying ancient wisdom for your practice and your everyday life. Set your intention before stepping onto the mat.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.sohamspaces.com/index.html">
-<meta property="og:image" content="https://www.sohamspaces.com/og-image.jpg">
+<meta property="og:title" content="Our Yoga Cards — Sohamspaces">
+<meta property="og:description" content="83 yoga cards carrying ancient wisdom for your practice and your everyday life. Set your intention before stepping onto the mat.">
+<meta property="og:image" content="https://www.sohamspaces.com/yoga-cards-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Sohamspaces">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sohamspaces — Yoga Cards for Modern Life">
-<meta name="twitter:description" content="83 teaching cards rooted in ancient yoga wisdom. Set your intention, deepen your practice, and carry the teachings with you.">
-<title>Sohamspaces — Yoga Cards &amp; Ancient Wisdom for Modern Life</title>
-<link rel="icon" type="image/x-icon" href="https://www.sohamspaces.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="512x512" href="https://www.sohamspaces.com/favicon-512.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.sohamspaces.com/apple-touch-icon.png">
+<meta name="twitter:title" content="Our Yoga Cards — Sohamspaces">
+<meta name="twitter:description" content="83 yoga cards carrying ancient wisdom for your practice and your everyday life. Set your intention before stepping onto the mat.">
+<meta name="twitter:image" content="https://www.sohamspaces.com/yoga-cards-preview.png">
+<title>Our Yoga Cards — Sohamspaces</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%233E4E3C'/%3E%3Ctext y='72' x='50' text-anchor='middle' font-family='Georgia,serif' font-size='58' font-style='italic' fill='%23C8D5C6'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
-    --sage: #8A9E87; --sage-lt: #C8D5C6; --sage-dk: #3E4E3C;
-    --sand: #F2EDE6; --sand-dk: #E0D7CC;
-    --ink: #2C2C28; --ink-mid: #4A4A44; --ink-lt: #7A7A72;
-    --cream: #FAF7F2; --gold: #B8975A; --gold-lt: #D4B87A; --white: #FFFFFF;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'Jost', system-ui, sans-serif;
-    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --sage:     #8A9E87;
+    --sage-lt:  #C8D5C6;
+    --sage-dk:  #3E4E3C;
+    --sand:     #F2EDE6;
+    --sand-dk:  #E0D7CC;
+    --ink:      #2C2C28;
+    --ink-mid:  #4A4A44;
+    --ink-lt:   #7A7A72;
+    --cream:    #FAF7F2;
+    --gold:     #B8975A;
+    --gold-lt:  #D4B87A;
+    --white:    #FFFFFF;
+    --serif:    'Cormorant Garamond', Georgia, serif;
+    --sans:     'Jost', system-ui, sans-serif;
+    --ease:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+
   html { scroll-behavior: smooth; }
-  html, body { font-family: var(--sans); background: var(--cream); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; width: 100%; margin: 0; padding: 0; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s var(--ease); }
+
+  html, body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s var(--ease);
+  }
   nav.scrolled { border-color: var(--sand-dk); }
-  .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-dk); text-decoration: none; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
   .nav-links a:hover, .nav-links a.active { color: var(--ink); }
   .nav-links a.active { border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
-  .nav-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--sage-dk); text-decoration: none; padding: 0.55rem 1.4rem; border-radius: 2px; transition: background 0.2s; }
-  .nav-cta:hover { background: var(--ink); }
-  .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 8rem 2rem 6rem; position: relative; overflow: hidden; background: var(--cream); }
-  .hero-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.05; pointer-events: none; }
-  .hero-eyebrow { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
-  .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
-  .hero-title { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 300; line-height: 1.05; color: var(--ink); margin-bottom: 1.5rem; }
-  .hero-title em { font-style: italic; color: var(--sage-dk); }
-  .hero-sub { font-family: var(--serif); font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 300; font-style: italic; color: var(--ink-lt); max-width: 500px; line-height: 1.6; margin-bottom: 3.5rem; }
-  .hero-actions { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center; }
-  .btn-primary { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); background: var(--sage-dk); text-decoration: none; padding: 1rem 2.2rem; border-radius: 2px; transition: background 0.2s, transform 0.2s; }
-  .btn-primary:hover { background: var(--ink); transform: translateY(-1px); }
-  .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
-  .btn-ghost:hover { color: var(--ink); }
-  .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-  .scroll-hint span { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-lt); }
-  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollpulse 2s ease-in-out infinite; }
-  @keyframes scrollpulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
-  .intro { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
-  .section-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-  .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
-  .intro-title { font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 2rem; }
-  .intro-title em { font-style: italic; color: var(--sage-dk); }
-  .intro-body { font-size: 0.9rem; font-weight: 300; line-height: 2; color: var(--ink-mid); margin-bottom: 1.5rem; max-width: 44ch; }
-  .intro-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--sand-dk); }
-  .intro-stat { background: var(--sand); padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 0.4rem; }
-  .intro-stat:nth-child(2) { background: var(--cream); }
-  .intro-stat:nth-child(3) { background: var(--cream); }
-  .intro-stat:nth-child(4) { background: var(--sage-dk); }
-  .stat-num { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--ink); line-height: 1; }
-  .intro-stat:nth-child(4) .stat-num { color: var(--white); }
-  .stat-label { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-lt); }
-  .intro-stat:nth-child(4) .stat-label { color: var(--sage-lt); }
-  .feature-strip { background: var(--sage-dk); padding: 5rem 4rem; }
-  .feature-strip-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-  .feature-quote { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; font-style: italic; color: var(--white); line-height: 1.5; margin-bottom: 1.5rem; }
-  .feature-attr { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-lt); }
-  .offerings { padding: 8rem 4rem; background: var(--sand); }
-  .offerings-header { text-align: center; margin-bottom: 5rem; }
-  .offerings-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; color: var(--ink); line-height: 1.2; margin-top: 1rem; }
-  .offerings-title em { font-style: italic; color: var(--sage-dk); }
-  .offerings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--sand-dk); max-width: 1000px; margin: 0 auto; }
-  .offering-card { background: var(--cream); padding: 3rem 2.5rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s; text-decoration: none; }
-  .offering-card:hover { background: var(--white); }
-  .offering-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--sand); display: flex; align-items: center; justify-content: center; }
-  .offering-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; color: var(--ink); line-height: 1.3; }
-  .offering-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.8; color: var(--ink-lt); flex: 1; }
-  .offering-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem; }
-  .philosophy { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; background: var(--cream); }
-  .philosophy-visual { position: relative; height: 480px; background: var(--sand); display: flex; align-items: center; justify-content: center; }
-  .philosophy-title { font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 2rem; margin-top: 1rem; }
-  .philosophy-title em { font-style: italic; color: var(--sage-dk); }
-  .philosophy-body { font-size: 0.9rem; font-weight: 300; line-height: 2; color: var(--ink-mid); margin-bottom: 1.5rem; }
-  footer { background: #2A3A28; border-top: 1px solid rgba(255,255,255,0.1); padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
-  .footer-logo { font-family: var(--serif); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; }
-  .footer-tagline { font-family: var(--serif); font-size: 0.8rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.3); }
-  .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
-  .footer-links a { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: rgba(255,255,255,0.6); }
-  .footer-social { display: flex; gap: 1rem; }
-  .footer-social a { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
-  .footer-social a:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; }
-  @media (max-width: 900px) {
-    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
-    .intro { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
-    .offerings-grid { grid-template-columns: 1fr; }
-    .philosophy { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
-    .philosophy-visual { height: 280px; }
-    footer { padding: 2.5rem 1.5rem; flex-direction: column; align-items: flex-start; }
+
+  .nav-cta {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--sage-dk);
+    text-decoration: none;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.2s;
   }
+  .nav-cta:hover { background: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 5rem 6rem 4rem;
+    background: var(--cream);
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--sage-dk);
+  }
+
+  .hero-subtitle {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-lt);
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    max-width: 38ch;
+    margin-bottom: 3rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--sage-dk);
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--ink); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--ink); }
+  .btn-ghost svg { transition: transform 0.2s; }
+  .btn-ghost:hover svg { transform: translateX(3px); }
+
+  .hero-right {
+    position: relative;
+    background: var(--sand);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-stack {
+    position: relative;
+    width: 260px;
+    height: 360px;
+  }
+  .card-stack .card-vis {
+    position: absolute;
+    width: 220px;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(30,30,26,0.15);
+  }
+  .card-vis-1 {
+    background: var(--cream);
+    border: 1px solid var(--sand-dk);
+    top: 30px; left: 20px;
+    transform: rotate(-6deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .card-vis-2 {
+    background: var(--white);
+    border: 1px solid var(--sand-dk);
+    top: 10px; left: 40px;
+    transform: rotate(2deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .card-vis-3 {
+    background: var(--sage-dk);
+    top: 0px; left: 0px;
+    transform: rotate(-1deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: rotate(-1deg) translateY(0); }
+    50%       { transform: rotate(-1deg) translateY(-10px); }
+  }
+
+  .card-ornament {
+    width: 40px;
+    height: 1px;
+    background: var(--sage-lt);
+    margin: 0.75rem auto;
+  }
+  .card-word {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.2;
+  }
+  .card-teaching {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-lt);
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .card-back-word {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--ink-lt);
+    text-align: center;
+    font-style: italic;
+  }
+  .card-back-num {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--sand-dk);
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+
+  .hero-stat {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .hero-stat-num {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-lt);
+  }
+
+  /* ── JOURNEY STRIP ── */
+  .journey-strip {
+    background: var(--sage-dk);
+    padding: 1.2rem 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+  }
+  .journey-label {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage-lt);
+    white-space: nowrap;
+    margin-right: 2.5rem;
+  }
+  .journey-places {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .journey-place {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+  }
+  .journey-sep {
+    color: var(--gold);
+    font-size: 0.6rem;
+    margin: 0 0.25rem;
+  }
+
+  /* ── STORY SECTION ── */
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+  }
+
+  .story-image {
+    background: var(--sand-dk);
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+  .story-image-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(138,158,135,0.06) 40px,
+        rgba(138,158,135,0.06) 41px
+      ),
+      var(--sand);
+  }
+  .story-lotus {
+    opacity: 0.15;
+  }
+
+  .story-content {
+    padding: 6rem 5rem 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .story-heading {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+  .story-heading em { font-style: italic; color: var(--sage-dk); }
+
+  .story-body {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--ink-mid);
+    margin-bottom: 1.5rem;
+    max-width: 44ch;
+  }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside {
+    background: var(--sand);
+    padding: 7rem 4rem;
+  }
+  .inside-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .inside-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .inside-title em { font-style: italic; color: var(--sage-dk); }
+  .inside-sub {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--ink-lt);
+    margin-top: 0.75rem;
+    line-height: 1.7;
+  }
+
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--sand-dk);
+  }
+  .inside-item {
+    background: var(--cream);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: background 0.2s;
+  }
+  .inside-item:hover { background: var(--white); }
+
+  .inside-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .inside-item-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .inside-item-desc {
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink-lt);
+  }
+
+  /* ── HOW TO USE ── */
+  .how {
+    background: var(--sage-dk);
+    padding: 7rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .how-left {}
+  .how-section-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-lt);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .how-section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--sage-lt);
+  }
+  .how-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
+  .how-title em { font-style: italic; }
+  .how-body {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .how-step {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    align-items: start;
+  }
+  .how-step:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+  .how-step-num {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1;
+    padding-top: 0.1rem;
+  }
+  .how-step-text {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.5;
+    padding-top: 0.2rem;
+  }
+  .how-step-sub {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.3rem;
+    line-height: 1.6;
+    font-family: var(--sans);
+  }
+
+  /* ── BENEFITS ── */
+  .benefits {
+    padding: 7rem 4rem;
+    background: var(--cream);
+  }
+  .benefits-header {
+    max-width: 500px;
+    margin-bottom: 4rem;
+  }
+  .benefits-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-top: 1rem;
+  }
+  .benefits-title em { font-style: italic; color: var(--sage-dk); }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 5rem;
+    max-width: 800px;
+  }
+  .benefit-item {}
+  .benefit-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .benefit-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .benefit-desc {
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink-lt);
+    padding-left: 0.9rem;
+  }
+
+  /* ── TESTIMONIAL PLACEHOLDER ── */
+  .trust {
+    background: var(--sand);
+    padding: 5rem 4rem;
+    text-align: center;
+  }
+  .trust-quote {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.55;
+  }
+  .trust-attr {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-lt);
+  }
+  .trust-note {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--ink-lt);
+    margin-top: 3rem;
+    font-style: italic;
+  }
+
+  /* ── SIGNUP ── */
+  .signup {
+    background: var(--ink);
+    padding: 7rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .signup-left {}
+  .signup-eyebrow {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .signup-eyebrow::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--gold);
+  }
+  .signup-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+  }
+  .signup-title em { font-style: italic; }
+  .signup-body {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .signup-form input[type="text"],
+  .signup-form input[type="email"] {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 2px;
+    padding: 0.9rem 1.1rem;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .signup-form input::placeholder { color: rgba(255,255,255,0.3); }
+  .signup-form input:focus { border-color: var(--gold); }
+
+  .signup-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .signup-consent input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--gold);
+    cursor: pointer;
+  }
+  .signup-consent label {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+    cursor: pointer;
+  }
+
+  .signup-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .signup-submit:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+  .signup-privacy {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+
+  /* success state */
+  .signup-success {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+  }
+  .signup-success.visible { display: block; }
+  .signup-success-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  .signup-success p {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+  }
+  .footer-tagline {
+    font-family: var(--serif);
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.3);
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.6); }
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+  }
+  .footer-social a {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .footer-social a:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 5rem 2rem 3rem; }
+    .hero-right { min-height: 400px; }
+    .story { grid-template-columns: 1fr; }
+    .story-image { min-height: 300px; }
+    .story-content { padding: 4rem 2rem; }
+    .inside { padding: 5rem 1.5rem; }
+    .inside-grid { grid-template-columns: 1fr 1fr; }
+    .how { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
+    .benefits { padding: 5rem 2rem; }
+    .benefits-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .signup { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
+    footer { flex-direction: column; gap: 1.5rem; align-items: flex-start; padding: 2.5rem 1.5rem; }
+  }
+
+  /* MOBILE HAMBURGER */
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
   .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--sage-dk); transition: transform 0.3s var(--ease), opacity 0.3s; }
   .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
@@ -133,216 +941,442 @@
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="main-nav">
-  <a href="https://www.sohamspaces.com/index.html" class="nav-logo">Sohamspaces</a>
+  <a href="https://www.sohamspaces.com" class="nav-logo">Sohamspaces</a>
   <ul class="nav-links">
-    <li><a href="https://www.sohamspaces.com/index.html" class="active">Home</a></li>
-    <li><a href="https://www.sohamspaces.com/yoga_cards.html">Yoga Cards</a></li>
-    <li><a href="https://www.sohamspaces.com/about.html">About</a></li>
-    <li><a href="https://www.sohamspaces.com/contact.html">Contact</a></li>
+    <li><a href="#" class="active">Yoga Cards</a></li>
+    <li><a href="https://www.sohamspaces.com/about">About</a></li>
+    <li><a href="https://www.sohamspaces.com/contact">Contact</a></li>
   </ul>
-  <a href="https://www.sohamspaces.com/waitlist.html" class="nav-cta">Join the Waitlist</a>
+  <a href="#signup" class="nav-cta">Join the Waitlist</a>
+
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
-    <a href="https://www.sohamspaces.com/index.html" class="active">Home</a>
-    <a href="https://www.sohamspaces.com/yoga_cards.html">Yoga Cards</a>
-    <a href="https://www.sohamspaces.com/about.html">About</a>
-    <a href="https://www.sohamspaces.com/contact.html">Contact</a>
-    <a href="https://www.sohamspaces.com/waitlist.html" class="mobile-menu-cta">Join the Waitlist</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/home.html">Home</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="active">Yoga Cards</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html">About</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html">Contact</a>
+    <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="mobile-menu-cta">Join the Waitlist</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg">
-    <svg width="600" height="600" viewBox="0 0 600 600" fill="none">
-      <circle cx="300" cy="300" r="280" stroke="#8A9E87" stroke-width="0.5"/>
-      <circle cx="300" cy="300" r="220" stroke="#8A9E87" stroke-width="0.5"/>
-      <circle cx="300" cy="300" r="160" stroke="#8A9E87" stroke-width="0.5"/>
-      <circle cx="300" cy="300" r="100" stroke="#8A9E87" stroke-width="0.5"/>
-      <circle cx="300" cy="300" r="40" stroke="#8A9E87" stroke-width="0.5"/>
-      <line x1="300" y1="20" x2="300" y2="580" stroke="#8A9E87" stroke-width="0.5"/>
-      <line x1="20" y1="300" x2="580" y2="300" stroke="#8A9E87" stroke-width="0.5"/>
-      <line x1="102" y1="102" x2="498" y2="498" stroke="#8A9E87" stroke-width="0.5"/>
-      <line x1="498" y1="102" x2="102" y2="498" stroke="#8A9E87" stroke-width="0.5"/>
-    </svg>
+  <div class="hero-left">
+    <p class="hero-eyebrow reveal">83 Cards &bull; Ancient Wisdom</p>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Pause.<br><em>Breathe.</em><br>Return.
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2">A deck for your practice and your life.</p>
+    <p class="hero-desc reveal reveal-delay-2">
+      Each card carries a teaching rooted in the oldest yoga traditions ,
+      gathered across four countries, distilled into a single moment of reflection.
+      Set your intention before stepping onto the mat, or carry it with you through your day.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#signup" class="btn-primary">Join the Waitlist</a>
+      <a href="#story" class="btn-ghost">
+        The story behind the deck
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 7h10M8 3l4 4-4 4"/>
+        </svg>
+      </a>
+    </div>
   </div>
-  <p class="hero-eyebrow reveal">Ancient Wisdom · Modern Life</p>
-  <h1 class="hero-title reveal reveal-delay-1">
-    So.<em>Ham.</em><br>Spaces.
-  </h1>
-  <p class="hero-sub reveal reveal-delay-2">
-    A home for the teachings that bring you back to yourself.
-  </p>
-  <div class="hero-actions reveal reveal-delay-3">
-    <a href="https://www.sohamspaces.com/yoga_cards.html" class="btn-primary">Explore the Yoga Cards</a>
-    <a href="https://www.sohamspaces.com/about.html" class="btn-ghost">
-      Our story
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-    </a>
-  </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
+
+  <div class="hero-right">
+    <div class="card-stack">
+      <div class="card-vis card-vis-1">
+        <p class="card-back-word">Svādhyāya</p>
+        <div style="width:30px;height:1px;background:var(--sand-dk);margin:0.6rem auto;"></div>
+        <p class="card-back-num">Card 47 of 83</p>
+      </div>
+      <div class="card-vis card-vis-2">
+        <p class="card-back-word">Tapas</p>
+        <div style="width:30px;height:1px;background:var(--sand-dk);margin:0.6rem auto;"></div>
+        <p class="card-back-num">Card 12 of 83</p>
+      </div>
+      <div class="card-vis card-vis-3">
+        <p class="card-word">Santosha</p>
+        <div class="card-ornament"></div>
+        <p class="card-teaching">Contentment</p>
+      </div>
+    </div>
+
+    <div class="hero-stat">
+      <span class="hero-stat-num">83</span>
+      <span class="hero-stat-label">Cards in the Deck</span>
+    </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="intro">
-  <div class="intro-left">
-    <p class="section-label reveal">What is Sohamspaces</p>
-    <h2 class="intro-title reveal reveal-delay-1">
-      A space to pause,<br><em>breathe, and return.</em>
-    </h2>
-    <p class="intro-body reveal reveal-delay-2">
-      Soham is a Sanskrit mantra, "I am that." It is the sound of the breath itself,
-      the oldest teaching there is. Sohamspaces was born from a journey across
-      four countries in search of what it means to live that truth.
-    </p>
-    <p class="intro-body reveal reveal-delay-2">
-      What emerged was a collection of teachings, tools, and practices
-      to carry ancient wisdom into an ordinary day.
-    </p>
-    <a href="https://www.sohamspaces.com/about.html" class="btn-ghost reveal reveal-delay-3">
-      Read the full story
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-    </a>
-  </div>
-  <div class="intro-right reveal reveal-delay-1">
-    <div class="intro-stat"><span class="stat-num">83</span><span class="stat-label">Teaching Cards</span></div>
-    <div class="intro-stat"><span class="stat-num">4</span><span class="stat-label">Countries</span></div>
-    <div class="intro-stat"><span class="stat-num">1</span><span class="stat-label">Practice</span></div>
-    <div class="intro-stat"><span class="stat-num">∞</span><span class="stat-label">Moments of return</span></div>
-  </div>
-</section>
-
-<!-- FEATURE STRIP -->
-<div class="feature-strip">
-  <div class="feature-strip-inner">
-    <p class="feature-quote reveal">
-      "So Hum, I am that. The breath has always known the answer.
-      These spaces exist to help you hear it."
-    </p>
-    <p class="feature-attr reveal reveal-delay-1">, The Sohamspaces Founding Note</p>
+<!-- JOURNEY STRIP -->
+<div class="journey-strip">
+  <span class="journey-label">A journey across</span>
+  <div class="journey-places">
+    <span class="journey-place">Portugal</span>
+    <span class="journey-sep">◆</span>
+    <span class="journey-place">India</span>
+    <span class="journey-sep">◆</span>
+    <span class="journey-place">Bali</span>
+    <span class="journey-sep">◆</span>
+    <span class="journey-place">Malaysia</span>
   </div>
 </div>
 
-<!-- OFFERINGS -->
-<section class="offerings">
-  <div class="offerings-header">
-    <p class="section-label reveal" style="justify-content:center;">What We Offer</p>
-    <h2 class="offerings-title reveal reveal-delay-1">
-      Tools for the<br><em>journey inward.</em>
-    </h2>
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-image">
+    <div class="story-image-inner">
+      <svg class="story-lotus" width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="140" cy="140" r="135" stroke="#8A9E87" stroke-width="0.5"/>
+        <circle cx="140" cy="140" r="105" stroke="#8A9E87" stroke-width="0.5"/>
+        <circle cx="140" cy="140" r="75" stroke="#8A9E87" stroke-width="0.5"/>
+        <circle cx="140" cy="140" r="45" stroke="#8A9E87" stroke-width="0.5"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="#8A9E87" opacity="0.3"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(40 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(80 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(120 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(160 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(200 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(240 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(280 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(320 140 140)"/>
+        <circle cx="140" cy="140" r="18" fill="#8A9E87" opacity="0.25" stroke="#8A9E87" stroke-width="0.75"/>
+      </svg>
+    </div>
   </div>
-  <div class="offerings-grid">
-    <a href="https://www.sohamspaces.com/yoga_cards.html" class="offering-card reveal">
-      <div class="offering-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
-          <rect x="2" y="1" width="14" height="16" rx="2"/>
-          <line x1="5" y1="6" x2="13" y2="6"/><line x1="5" y1="9" x2="13" y2="9"/><line x1="5" y1="12" x2="9" y2="12"/>
-        </svg>
-      </div>
-      <p class="offering-title">The Yoga Cards</p>
-      <p class="offering-desc">83 teachings gathered across Portugal, India, Bali and Malaysia. Each card sets an intention for your practice or your day.</p>
-      <span class="offering-link">Explore the deck →</span>
-    </a>
-    <a href="https://www.sohamspaces.com/about.html" class="offering-card reveal reveal-delay-1">
-      <div class="offering-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
-          <circle cx="9" cy="6" r="3"/><path d="M3 16c0-3.314 2.686-6 6-6s6 2.686 6 6"/>
-        </svg>
-      </div>
-      <p class="offering-title">The Story</p>
-      <p class="offering-desc">A journey from the Atlantic coast to the temples of Bali, and what was found along the way. The origin of every teaching in this space.</p>
-      <span class="offering-link">Read the story →</span>
-    </a>
-    <a href="https://www.sohamspaces.com/waitlist.html" class="offering-card reveal reveal-delay-2">
-      <div class="offering-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
-          <path d="M9 2l1.5 4h4l-3 2.5 1 4L9 10l-3.5 2.5 1-4L3 6h4L9 2z"/>
-        </svg>
-      </div>
-      <p class="offering-title">Join the Waitlist</p>
-      <p class="offering-desc">Be the first to know when the deck is ready to ship. One email. No noise. Just the moment it arrives.</p>
-      <span class="offering-link">Reserve your spot →</span>
-    </a>
+
+  <div class="story-content">
+    <p class="section-label reveal">The Origin</p>
+    <h2 class="story-heading reveal reveal-delay-1">
+      A journey in search<br>of <em>stillness</em>.
+    </h2>
+    <p class="story-body reveal reveal-delay-2">
+      This deck was not made in a studio. It was gathered slowly ,
+      in ashrams and rice fields, on temple steps and quiet beaches,
+      through conversations with teachers whose wisdom had no translation.
+    </p>
+    <p class="story-body reveal reveal-delay-2">
+      From the Atlantic coast of Portugal to the backwaters of Kerala,
+      the ceremonies of Bali to the forests of Malaysia ,
+      each card holds a teaching encountered on that path.
+      Not collected, but lived.
+    </p>
+    <p class="story-body reveal reveal-delay-3">
+      The intention was never to create a product.
+      It was to make the wisdom portable. To let it travel with you,
+      wherever your own practice is calling you to go.
+    </p>
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
-<section class="philosophy">
-  <div class="philosophy-visual reveal">
-    <svg width="220" height="220" viewBox="0 0 220 220" fill="none" opacity="0.2">
-      <circle cx="110" cy="110" r="105" stroke="#3E4E3C" stroke-width="1"/>
-      <circle cx="110" cy="110" r="75" stroke="#3E4E3C" stroke-width="1"/>
-      <circle cx="110" cy="110" r="45" stroke="#3E4E3C" stroke-width="1"/>
-      <ellipse cx="110" cy="72" rx="14" ry="40" fill="#3E4E3C" opacity="0.4"/>
-      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(45 110 110)"/>
-      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(90 110 110)"/>
-      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(135 110 110)"/>
-      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(180 110 110)"/>
-      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(225 110 110)"/>
-      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(270 110 110)"/>
-      <ellipse cx="110" cy="72" rx="14" ry="40" fill="none" stroke="#3E4E3C" stroke-width="0.75" transform="rotate(315 110 110)"/>
-      <circle cx="110" cy="110" r="14" fill="#3E4E3C" opacity="0.3"/>
-    </svg>
-  </div>
-  <div>
-    <p class="section-label reveal">Our Philosophy</p>
-    <h2 class="philosophy-title reveal reveal-delay-1">
-      Wisdom is not<br>acquired. It is<br><em>remembered.</em>
+<!-- WHAT'S INSIDE -->
+<section class="inside" id="inside">
+  <div class="inside-header">
+    <p class="section-label reveal" style="justify-content: center;">What You Receive</p>
+    <h2 class="inside-title reveal reveal-delay-1">
+      Everything you need<br>to begin <em>within</em>.
     </h2>
-    <p class="philosophy-body reveal reveal-delay-2">
-      The oldest teachings of yoga are not complicated. They were never meant to be.
-      They were designed to be carried, in the body, in the breath, in a single word
-      held with attention throughout a day.
+    <p class="inside-sub reveal reveal-delay-2">
+      The deck arrives as a complete practice, nothing extra to source.
     </p>
-    <p class="philosophy-body reveal reveal-delay-2">
-      Sohamspaces exists to make that carrying easier. Not to add more to your life,
-      but to help you return to what has always been there.
+  </div>
+
+  <div class="inside-grid">
+    <div class="inside-item reveal">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <rect x="2" y="1" width="12" height="14" rx="1.5"/>
+          <line x1="5" y1="5" x2="11" y2="5"/>
+          <line x1="5" y1="8" x2="11" y2="8"/>
+          <line x1="5" y1="11" x2="8" y2="11"/>
+        </svg>
+      </div>
+      <p class="inside-item-title">83 Teaching Cards</p>
+      <p class="inside-item-desc">One teaching per card, each drawn from a different moment along the journey. Enough variety that no two mornings begin the same way.</p>
+    </div>
+
+    <div class="inside-item reveal reveal-delay-1">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <circle cx="8" cy="8" r="6"/>
+          <path d="M8 5v3l2 2"/>
+        </svg>
+      </div>
+      <p class="inside-item-title">An Introduction Card</p>
+      <p class="inside-item-desc">A guide to working with the deck, whether in a solo morning practice, a group setting, or a spontaneous moment of need throughout the day.</p>
+    </div>
+
+    <div class="inside-item reveal reveal-delay-2">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M8 2L9.5 6h4L10 8.5l1.5 4L8 10l-3.5 2.5L6 8.5 2.5 6h4L8 2z"/>
+        </svg>
+      </div>
+      <p class="inside-item-title">Breath &amp; Stillness</p>
+      <p class="inside-item-desc">Cards dedicated to the foundational practices of pranayama and presence, returning the body to its natural intelligence.</p>
+    </div>
+
+    <div class="inside-item reveal">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M8 13c0 0-5-3.5-5-7a5 5 0 0110 0c0 3.5-5 7-5 7z"/>
+        </svg>
+      </div>
+      <p class="inside-item-title">Inner Strength &amp; Letting Go</p>
+      <p class="inside-item-desc">Reflections on the practices that build resilience and the ones that ask you to release, the two inseparable movements of yoga.</p>
+    </div>
+
+    <div class="inside-item reveal reveal-delay-1">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M2 8h12M8 2v12"/>
+          <circle cx="8" cy="8" r="3"/>
+        </svg>
+      </div>
+      <p class="inside-item-title">Karma &amp; Intention</p>
+      <p class="inside-item-desc">Teachings on how we move through the world, the quality of attention we bring to action, and the freedom that comes from releasing the result.</p>
+    </div>
+
+    <div class="inside-item reveal reveal-delay-2">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M8 1l1 4h4l-3 2.5 1 4L8 9l-3 2.5 1-4L3 5h4L8 1z"/>
+        </svg>
+      </div>
+      <p class="inside-item-title">A Founder's Note</p>
+      <p class="inside-item-desc">A personal letter on why this deck exists, the moments of doubt and clarity, the teachers who shaped it, and the hope for how it might serve you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="how" id="practice">
+  <div class="how-left">
+    <p class="how-section-label reveal">The Practice</p>
+    <h2 class="how-title reveal reveal-delay-1">
+      Simple enough for any morning.<br><em>Deep enough for a lifetime.</em>
+    </h2>
+    <p class="how-body reveal reveal-delay-2">
+      There is no wrong way to use these cards.
+      But here is the practice that has served best ,
+      whether you have five minutes or an hour,
+      whether you are stepping onto your mat or heading into your day.
     </p>
-    <a href="https://www.sohamspaces.com/about.html" class="btn-primary reveal reveal-delay-3">Meet the founder</a>
+  </div>
+
+  <div class="how-steps">
+    <div class="how-step reveal">
+      <span class="how-step-num">I</span>
+      <div>
+        <p class="how-step-text">Arrive in stillness.</p>
+        <p class="how-step-sub">A single conscious breath before you reach for the deck. Let the body settle from wherever it's been.</p>
+      </div>
+    </div>
+    <div class="how-step reveal reveal-delay-1">
+      <span class="how-step-num">II</span>
+      <div>
+        <p class="how-step-text">Draw with openness.</p>
+        <p class="how-step-sub">Choose without looking, or let your eyes be drawn to one. Trust the impulse, it is rarely accidental.</p>
+      </div>
+    </div>
+    <div class="how-step reveal reveal-delay-2">
+      <span class="how-step-num">III</span>
+      <div>
+        <p class="how-step-text">Sit with the teaching.</p>
+        <p class="how-step-sub">Read it once. Then again slowly. Let the meaning settle before your mind begins to interpret.</p>
+      </div>
+    </div>
+    <div class="how-step reveal reveal-delay-3">
+      <span class="how-step-num">IV</span>
+      <div>
+        <p class="how-step-text">Carry the intention.</p>
+        <p class="how-step-sub">Into your practice. Into your day. Return to it when you notice yourself drifting from yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="benefits">
+  <div class="benefits-header">
+    <p class="section-label reveal">What the Practice Offers</p>
+    <h2 class="benefits-title reveal reveal-delay-1">
+      Small shifts.<br><em>Lasting change.</em>
+    </h2>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-item reveal">
+      <p class="benefit-title"><span class="benefit-dot"></span>A quieter nervous system</p>
+      <p class="benefit-desc">A moment of conscious intention before practice creates measurable calm, inviting the body out of reactivity and into presence.</p>
+    </div>
+    <div class="benefit-item reveal reveal-delay-1">
+      <p class="benefit-title"><span class="benefit-dot"></span>Deeper self-understanding</p>
+      <p class="benefit-desc">Each card names something that has always been there. The act of recognition, repeated daily, becomes its own kind of study.</p>
+    </div>
+    <div class="benefit-item reveal reveal-delay-2">
+      <p class="benefit-title"><span class="benefit-dot"></span>A more purposeful practice</p>
+      <p class="benefit-desc">Moving with an intention changes how you move. The teaching becomes an anchor the body can return to when the mind wanders.</p>
+    </div>
+    <div class="benefit-item reveal reveal-delay-3">
+      <p class="benefit-title"><span class="benefit-dot"></span>A thread through your day</p>
+      <p class="benefit-desc">The card you draw in the morning travels with you, a quiet reference point in moments of stress, distraction, or doubt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / TESTIMONIAL -->
+<section class="trust">
+  <p class="trust-quote reveal">
+    "The right teaching at the right moment doesn't feel like coincidence.
+    It feels like remembering something you've always known."
+  </p>
+  <p class="trust-attr reveal reveal-delay-1">, From the Founder's Note</p>
+  <p class="trust-note reveal reveal-delay-2">
+    Early response cards are with our first circle of practitioners.
+    Testimonials will be added here before the public launch.
+  </p>
+</section>
+
+<!-- SIGNUP -->
+<section class="signup" id="signup">
+  <div class="signup-left">
+    <p class="signup-eyebrow reveal">Join the Waitlist</p>
+    <h2 class="signup-title reveal reveal-delay-1">
+      Be first to know<br>when the deck<br><em>is ready.</em>
+    </h2>
+    <p class="signup-body reveal reveal-delay-2">
+      The deck is in its final stages of production.
+      Leave your email and we'll reach you the moment it's ready to ship ,
+      along with a note on what to expect when it arrives.
+      No noise. One message.
+    </p>
+  </div>
+
+  <div class="signup-right">
+    <form class="signup-form" id="waitlist-form" onsubmit="handleSignup(event)">
+      <input type="email" placeholder="Your email address" required autocomplete="email" id="signup-email">
+      <div class="signup-consent">
+        <input type="checkbox" id="consent" required>
+        <label for="consent">
+          I'd like to receive a single notification when the Sohamspaces deck launches.
+          No marketing. No spam. Just the one message.
+        </label>
+      </div>
+      <button type="submit" class="signup-submit">Reserve My Spot</button>
+      <p class="signup-privacy">Your email is used only for this notification and nothing else.</p>
+    </form>
+    <div class="signup-success" id="signup-success">
+      <p class="signup-success-icon">✦</p>
+      <p>You're on the list. We'll write to you the moment the deck is ready. Until then, keep practising.</p>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div style="display:flex;flex-direction:column;gap:0.4rem;">
-    <a href="https://www.sohamspaces.com/index.html" class="footer-logo">Sohamspaces</a>
+    <a href="https://www.sohamspaces.com" class="footer-logo">Sohamspaces</a>
     <span class="footer-tagline">Ancient wisdom for modern souls.</span>
   </div>
+
   <div class="footer-links">
-    <a href="https://www.sohamspaces.com/about.html">About</a>
-    <a href="https://www.sohamspaces.com/contact.html">Contact</a>
+    <a href="https://www.sohamspaces.com/about">About</a>
+    <a href="https://www.sohamspaces.com/contact">Contact</a>
     <a href="https://www.sohamspaces.com/privacy-policy">Privacy</a>
     <a href="https://www.sohamspaces.com/shipping-policy">Shipping</a>
     <a href="https://www.sohamspaces.com/terms-conditions">Terms</a>
-    <a href="https://www.sohamspaces.com/Refund-policy.html">Refunds</a>
+    <a href="https://www.sohamspaces.com/refund-policy">Refunds</a>
   </div>
+
   <div class="footer-social">
     <a href="https://www.instagram.com/sohamspaces/" aria-label="Instagram">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
     </a>
     <a href="mailto:info@sohamspaces.com" aria-label="Email">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="M2 7l10 7 10-7"/>
+      </svg>
     </a>
   </div>
 </footer>
 
 <script>
+  // Nav scroll behaviour
   const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
-  document.querySelectorAll('.hero .reveal').forEach((el, i) => { setTimeout(() => el.classList.add('visible'), 100 + i * 120); });
+
+  // Trigger hero items immediately
+  document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 100 + i * 120);
+  });
+
+  // Signup form
+  function handleSignup(e) {
+    e.preventDefault();
+    const form = document.getElementById('waitlist-form');
+    const success = document.getElementById('signup-success');
+    form.style.display = 'none';
+    success.classList.add('visible');
+  }
+
+  // Report full page height to Wix so the iframe resizes correctly
+  function reportHeight() {
+    const height = document.documentElement.scrollHeight;
+    window.parent.postMessage({ type: 'iwh', height: height }, '*');
+  }
+  // Report on load and repeatedly for 5 seconds to catch fonts/images loading
+  window.addEventListener('load', function() {
+    reportHeight();
+    let count = 0;
+    const interval = setInterval(function() {
+      reportHeight();
+      count++;
+      if (count > 20) clearInterval(interval);
+    }, 250);
+  });
+  // Also report immediately
+  reportHeight();
+
+  // Mobile hamburger menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : ''; });
-    mobileMenu.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }); });
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
   }
 </script>
 </body>
