@@ -26,234 +26,893 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --sage: #8A9E87; --sage-lt: #C8D5C6; --sage-dk: #3E4E3C;
-    --sand: #F2EDE6; --sand-dk: #E0D7CC;
-    --ink: #2C2C28; --ink-mid: #4A4A44; --ink-lt: #7A7A72;
-    --cream: #FAF7F2; --gold: #B8975A; --gold-lt: #D4B87A; --white: #FFFFFF;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'Jost', system-ui, sans-serif;
-    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --sage:     #8A9E87;
+    --sage-lt:  #C8D5C6;
+    --sage-dk:  #3E4E3C;
+    --sand:     #F2EDE6;
+    --sand-dk:  #E0D7CC;
+    --ink:      #2C2C28;
+    --ink-mid:  #4A4A44;
+    --ink-lt:   #7A7A72;
+    --cream:    #FAF7F2;
+    --gold:     #B8975A;
+    --gold-lt:  #D4B87A;
+    --white:    #FFFFFF;
+    --serif:    'Cormorant Garamond', Georgia, serif;
+    --sans:     'Jost', system-ui, sans-serif;
+    --ease:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   html { scroll-behavior: smooth; }
-  html, body { font-family: var(--sans); background: var(--cream); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; width: 100%; margin: 0; padding: 0; }
 
-  /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s var(--ease); }
+  html, body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s var(--ease);
+  }
   nav.scrolled { border-color: var(--sand-dk); }
-  .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
   .nav-links a:hover, .nav-links a.active { color: var(--ink); }
   .nav-links a.active { border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
-  .nav-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--sage-dk); text-decoration: none; padding: 0.55rem 1.4rem; border-radius: 2px; transition: background 0.2s; }
+
+  .nav-cta {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--sage-dk);
+    text-decoration: none;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
   .nav-cta:hover { background: var(--ink); }
 
-  /* HERO */
-  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 5rem; }
-  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem 6rem 4rem; background: var(--cream); }
-  .hero-eyebrow { font-family: var(--sans); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-  .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
-  .hero-title { font-family: var(--serif); font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.12; color: var(--ink); margin-bottom: 0.4rem; }
-  .hero-title em { font-style: italic; color: var(--sage-dk); }
-  .hero-subtitle { font-family: var(--serif); font-size: 1.25rem; font-weight: 300; font-style: italic; color: var(--ink-lt); margin-bottom: 2.5rem; line-height: 1.5; }
-  .hero-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.85; color: var(--ink-mid); max-width: 38ch; margin-bottom: 3rem; }
-  .hero-actions { display: flex; align-items: center; gap: 2rem; }
-  .btn-primary { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); background: var(--sage-dk); text-decoration: none; padding: 1rem 2.2rem; border-radius: 2px; transition: background 0.2s, transform 0.2s; border: none; cursor: pointer; }
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 5rem 6rem 4rem;
+    background: var(--cream);
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--sage-dk);
+  }
+
+  .hero-subtitle {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-lt);
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    max-width: 38ch;
+    margin-bottom: 3rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--sage-dk);
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+  }
   .btn-primary:hover { background: var(--ink); transform: translateY(-1px); }
-  .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
   .btn-ghost:hover { color: var(--ink); }
   .btn-ghost svg { transition: transform 0.2s; }
   .btn-ghost:hover svg { transform: translateX(3px); }
 
-  /* ── HERO RIGHT — replaced card stack with real photo ── */
   .hero-right {
     position: relative;
+    background: var(--sand);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--sand);
-    min-height: 100%;
   }
-  .hero-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-  /* subtle left-edge fade so it blends into the left panel */
-  .hero-right::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; bottom: 0;
-    width: 80px;
-    background: linear-gradient(to right, var(--cream), transparent);
-    z-index: 1;
-    pointer-events: none;
-  }
-  .hero-stat { position: absolute; bottom: 3rem; left: 3rem; display: flex; flex-direction: column; gap: 0.2rem; z-index: 2; }
-  .hero-stat-num { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; color: var(--ink); line-height: 1; }
-  .hero-stat-label { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-lt); }
 
-  /* JOURNEY STRIP */
-  .journey-strip { background: var(--sage-dk); padding: 1.2rem 4rem; display: flex; align-items: center; gap: 0; overflow: hidden; }
-  .journey-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-lt); white-space: nowrap; margin-right: 2.5rem; }
-  .journey-places { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-  .journey-place { font-family: var(--serif); font-size: 1rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.7); }
-  .journey-sep { color: var(--gold); font-size: 0.6rem; margin: 0 0.25rem; }
-
-  /* STORY */
-  .story { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
-  .story-image { background: var(--sand-dk); position: relative; overflow: hidden; min-height: 500px; }
-  .story-image-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(138,158,135,0.06) 40px,rgba(138,158,135,0.06) 41px),var(--sand); }
-  .story-lotus { opacity: 0.15; }
-  .story-content { padding: 6rem 5rem 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
-  .section-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-  .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
-  .story-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 2rem; }
-  .story-heading em { font-style: italic; color: var(--sage-dk); }
-  .story-body { font-size: 0.9rem; font-weight: 300; line-height: 2; color: var(--ink-mid); margin-bottom: 1.5rem; max-width: 44ch; }
-
-  /* ── WHAT'S INSIDE — with image ── */
-  .inside { background: var(--sand); padding: 7rem 4rem; }
-  .inside-header { text-align: center; margin-bottom: 5rem; }
-  .inside-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; color: var(--ink); line-height: 1.2; }
-  .inside-title em { font-style: italic; color: var(--sage-dk); }
-  .inside-sub { font-size: 0.85rem; font-weight: 300; color: var(--ink-lt); margin-top: 0.75rem; line-height: 1.7; }
-
-  /* two-column layout: image left, grid right */
-  .inside-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .inside-image {
-    position: sticky;
-    top: 6rem;
-  }
-  .inside-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 24px 64px rgba(44,44,40,0.13);
-    display: block;
-  }
-  /* "83 Cards" badge */
-  .inside-image-wrap {
+  .card-stack {
     position: relative;
-    display: inline-block;
-    width: 100%;
+    width: 260px;
+    height: 360px;
   }
-  .inside-badge {
+  .card-stack .card-vis {
     position: absolute;
-    bottom: -14px;
-    right: -14px;
-    width: 78px;
-    height: 78px;
-    border-radius: 50%;
-    background: var(--sage-dk);
-    color: var(--white);
+    width: 220px;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(30,30,26,0.15);
+  }
+  .card-vis-1 {
+    background: var(--cream);
+    border: 1px solid var(--sand-dk);
+    top: 30px; left: 20px;
+    transform: rotate(-6deg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 20px rgba(62,78,60,0.4);
+    padding: 2rem;
   }
-  .inside-badge-num { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; line-height: 1; }
-  .inside-badge-word { font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage-lt); }
+  .card-vis-2 {
+    background: var(--white);
+    border: 1px solid var(--sand-dk);
+    top: 10px; left: 40px;
+    transform: rotate(2deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .card-vis-3 {
+    background: var(--sage-dk);
+    top: 0px; left: 0px;
+    transform: rotate(-1deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: rotate(-1deg) translateY(0); }
+    50%       { transform: rotate(-1deg) translateY(-10px); }
+  }
 
-  .inside-grid { display: flex; flex-direction: column; gap: 1.5px; background: var(--sand-dk); }
-  .inside-item { background: var(--cream); padding: 2rem 2rem; display: flex; flex-direction: column; gap: 0.75rem; transition: background 0.2s; }
+  .card-ornament {
+    width: 40px;
+    height: 1px;
+    background: var(--sage-lt);
+    margin: 0.75rem auto;
+  }
+  .card-word {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.2;
+  }
+  .card-teaching {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-lt);
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .card-back-word {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--ink-lt);
+    text-align: center;
+    font-style: italic;
+  }
+  .card-back-num {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--sand-dk);
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+
+  .hero-stat {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .hero-stat-num {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-lt);
+  }
+
+  /* ── JOURNEY STRIP ── */
+  .journey-strip {
+    background: var(--sage-dk);
+    padding: 1.2rem 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+  }
+  .journey-label {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage-lt);
+    white-space: nowrap;
+    margin-right: 2.5rem;
+  }
+  .journey-places {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .journey-place {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+  }
+  .journey-sep {
+    color: var(--gold);
+    font-size: 0.6rem;
+    margin: 0 0.25rem;
+  }
+
+  /* ── STORY SECTION ── */
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+  }
+
+  .story-image {
+    background: var(--sand-dk);
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+  .story-image-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(138,158,135,0.06) 40px,
+        rgba(138,158,135,0.06) 41px
+      ),
+      var(--sand);
+  }
+  .story-lotus {
+    opacity: 0.15;
+  }
+
+  .story-content {
+    padding: 6rem 5rem 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .story-heading {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+  .story-heading em { font-style: italic; color: var(--sage-dk); }
+
+  .story-body {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--ink-mid);
+    margin-bottom: 1.5rem;
+    max-width: 44ch;
+  }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside {
+    background: var(--sand);
+    padding: 7rem 4rem;
+  }
+  .inside-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .inside-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .inside-title em { font-style: italic; color: var(--sage-dk); }
+  .inside-sub {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--ink-lt);
+    margin-top: 0.75rem;
+    line-height: 1.7;
+  }
+
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--sand-dk);
+  }
+  .inside-item {
+    background: var(--cream);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: background 0.2s;
+  }
   .inside-item:hover { background: var(--white); }
-  .inside-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--sand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .inside-item-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--ink); line-height: 1.3; }
-  .inside-item-desc { font-size: 0.8rem; font-weight: 300; line-height: 1.75; color: var(--ink-lt); }
 
-  /* HOW TO USE */
-  .how { background: var(--sage-dk); padding: 7rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-  .how-section-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-  .how-section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--sage-lt); }
-  .how-title { font-family: var(--serif); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 300; color: var(--white); line-height: 1.25; margin-bottom: 1.5rem; }
+  .inside-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .inside-item-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .inside-item-desc {
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink-lt);
+  }
+
+  /* ── HOW TO USE ── */
+  .how {
+    background: var(--sage-dk);
+    padding: 7rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .how-left {}
+  .how-section-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-lt);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .how-section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--sage-lt);
+  }
+  .how-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
   .how-title em { font-style: italic; }
-  .how-body { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.65); }
-  .how-steps { display: flex; flex-direction: column; gap: 0; }
-  .how-step { display: grid; grid-template-columns: 3rem 1fr; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); align-items: start; }
+  .how-body {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .how-step {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    align-items: start;
+  }
   .how-step:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
-  .how-step-num { font-family: var(--serif); font-size: 1.75rem; font-weight: 300; font-style: italic; color: var(--gold); line-height: 1; padding-top: 0.1rem; }
-  .how-step-text { font-family: var(--serif); font-size: 1.05rem; font-weight: 300; color: var(--white); line-height: 1.5; padding-top: 0.2rem; }
-  .how-step-sub { font-size: 0.78rem; font-weight: 300; color: rgba(255,255,255,0.5); margin-top: 0.3rem; line-height: 1.6; font-family: var(--sans); }
+  .how-step-num {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1;
+    padding-top: 0.1rem;
+  }
+  .how-step-text {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.5;
+    padding-top: 0.2rem;
+  }
+  .how-step-sub {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.3rem;
+    line-height: 1.6;
+    font-family: var(--sans);
+  }
 
-  /* BENEFITS */
-  .benefits { padding: 7rem 4rem; background: var(--cream); }
-  .benefits-header { max-width: 500px; margin-bottom: 4rem; }
-  .benefits-title { font-family: var(--serif); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-top: 1rem; }
+  /* ── BENEFITS ── */
+  .benefits {
+    padding: 7rem 4rem;
+    background: var(--cream);
+  }
+  .benefits-header {
+    max-width: 500px;
+    margin-bottom: 4rem;
+  }
+  .benefits-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-top: 1rem;
+  }
   .benefits-title em { font-style: italic; color: var(--sage-dk); }
-  .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem 5rem; max-width: 800px; }
-  .benefit-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ink); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; }
-  .benefit-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-  .benefit-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: var(--ink-lt); padding-left: 0.9rem; }
 
-  /* TRUST */
-  .trust { background: var(--sand); padding: 5rem 4rem; text-align: center; }
-  .trust-quote { font-family: var(--serif); font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 300; font-style: italic; color: var(--ink); max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.55; }
-  .trust-attr { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-lt); }
-  .trust-note { font-size: 0.8rem; font-weight: 300; color: var(--ink-lt); margin-top: 3rem; font-style: italic; }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 5rem;
+    max-width: 800px;
+  }
+  .benefit-item {}
+  .benefit-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .benefit-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .benefit-desc {
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink-lt);
+    padding-left: 0.9rem;
+  }
 
-  /* SIGNUP */
-  .signup { background: var(--sage-dk); padding: 7rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-  .signup-eyebrow { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-  .signup-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--sage-lt); }
-  .signup-title { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 1.25rem; }
+  /* ── TESTIMONIAL PLACEHOLDER ── */
+  .trust {
+    background: var(--sand);
+    padding: 5rem 4rem;
+    text-align: center;
+  }
+  .trust-quote {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.55;
+  }
+  .trust-attr {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-lt);
+  }
+  .trust-note {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--ink-lt);
+    margin-top: 3rem;
+    font-style: italic;
+  }
+
+  /* ── SIGNUP ── */
+  .signup {
+    background: var(--ink);
+    padding: 7rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .signup-left {}
+  .signup-eyebrow {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .signup-eyebrow::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--gold);
+  }
+  .signup-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+  }
   .signup-title em { font-style: italic; }
-  .signup-body { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.65); }
-  .signup-form { display: flex; flex-direction: column; gap: 1rem; }
-  .signup-form input[type="text"], .signup-form input[type="email"] { width: 100%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 2px; padding: 0.9rem 1.1rem; font-family: var(--sans); font-size: 0.85rem; font-weight: 300; color: var(--white); outline: none; transition: border-color 0.2s; }
-  .signup-form input::placeholder { color: rgba(255,255,255,0.4); }
-  .signup-form input:focus { border-color: var(--sage-lt); }
-  .signup-consent { display: flex; align-items: flex-start; gap: 0.75rem; }
-  .signup-consent input[type="checkbox"] { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; accent-color: var(--sage-lt); cursor: pointer; }
-  .signup-consent label { font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.6; cursor: pointer; }
-  .signup-submit { width: 100%; padding: 1rem; background: var(--white); color: var(--sage-dk); font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
-  .signup-submit:hover { background: var(--sage-lt); transform: translateY(-1px); }
-  .signup-privacy { font-size: 0.7rem; font-weight: 300; color: rgba(255,255,255,0.35); text-align: center; margin-top: 0.25rem; }
-  .signup-success { display: none; text-align: center; padding: 3rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; }
-  .signup-success.visible { display: block; }
-  .signup-success-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--sage-lt); font-family: var(--serif); font-style: italic; }
-  .signup-success p { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; font-style: italic; color: var(--white); line-height: 1.6; }
+  .signup-body {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.55);
+  }
 
-  /* FOOTER */
-  footer { background: #2A3A28; border-top: 1px solid rgba(255,255,255,0.1); padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; }
-  .footer-logo { font-family: var(--serif); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; }
-  .footer-tagline { font-family: var(--serif); font-size: 0.8rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.3); }
-  .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
-  .footer-links a { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .signup-form input[type="text"],
+  .signup-form input[type="email"] {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 2px;
+    padding: 0.9rem 1.1rem;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .signup-form input::placeholder { color: rgba(255,255,255,0.3); }
+  .signup-form input:focus { border-color: var(--gold); }
+
+  .signup-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .signup-consent input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--gold);
+    cursor: pointer;
+  }
+  .signup-consent label {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+    cursor: pointer;
+  }
+
+  .signup-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .signup-submit:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+  .signup-privacy {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+
+  /* success state */
+  .signup-success {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+  }
+  .signup-success.visible { display: block; }
+  .signup-success-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  .signup-success p {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+  }
+  .footer-tagline {
+    font-family: var(--serif);
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.3);
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
   .footer-links a:hover { color: rgba(255,255,255,0.6); }
-  .footer-social { display: flex; gap: 1rem; }
-  .footer-social a { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+  }
+  .footer-social a {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
   .footer-social a:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
 
-  /* REVEAL */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; } .reveal-delay-4 { transition-delay: 0.4s; }
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
 
-  /* RESPONSIVE */
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1.25rem 1.5rem; }
     .hero { grid-template-columns: 1fr; }
     .hero-left { padding: 5rem 2rem 3rem; }
-    .hero-right { min-height: 320px; }
-    .hero-right::before { display: none; }
+    .hero-right { min-height: 400px; }
     .story { grid-template-columns: 1fr; }
     .story-image { min-height: 300px; }
     .story-content { padding: 4rem 2rem; }
     .inside { padding: 5rem 1.5rem; }
-    .inside-body { grid-template-columns: 1fr; gap: 2rem; }
-    .inside-image { position: static; }
+    .inside-grid { grid-template-columns: 1fr 1fr; }
     .how { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
     .benefits { padding: 5rem 2rem; }
     .benefits-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -273,7 +932,9 @@
   .mobile-menu a:hover, .mobile-menu a.active { color: var(--sage-dk); }
   .mobile-menu-cta { margin-top: 2rem !important; font-family: var(--sans) !important; font-size: 0.72rem !important; font-weight: 500 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; font-style: normal !important; color: var(--white) !important; background: var(--sage-dk) !important; padding: 0.9rem 2rem !important; border-radius: 2px !important; border-bottom: none !important; width: auto !important; }
   @media (max-width: 900px) {
-    .nav-links { display: none !important; } .nav-cta { display: none !important; } .nav-back { display: none !important; }
+    .nav-links { display: none !important; }
+    .nav-cta { display: none !important; }
+    .nav-back { display: none !important; }
     .nav-hamburger { display: flex !important; }
   }
 
@@ -309,6 +970,7 @@
     <li><a href="https://www.sohamspaces.com/contact">Contact</a></li>
   </ul>
   <a href="#signup" class="nav-cta">Join the Waitlist</a>
+
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -320,24 +982,49 @@
     <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="mobile-menu-cta">Join the Waitlist</a>
 </div>
 
-<!-- ★ HERO — left: original text | right: real product photo -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <p class="hero-eyebrow reveal">83 Cards &bull; Ancient Wisdom</p>
-    <h1 class="hero-title reveal reveal-delay-1">Pause.<br><em>Breathe.</em><br>Return.</h1>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Pause.<br><em>Breathe.</em><br>Return.
+    </h1>
     <p class="hero-subtitle reveal reveal-delay-2">A deck for your practice and your life.</p>
-    <p class="hero-desc reveal reveal-delay-2">Each card carries a teaching rooted in the oldest yoga traditions , gathered across four countries, distilled into a single moment of reflection. Set your intention before stepping onto the mat, or carry it with you through your day.</p>
+    <p class="hero-desc reveal reveal-delay-2">
+      Each card carries a teaching rooted in the oldest yoga traditions ,
+      gathered across four countries, distilled into a single moment of reflection.
+      Set your intention before stepping onto the mat, or carry it with you through your day.
+    </p>
     <div class="hero-actions reveal reveal-delay-3">
       <a href="#signup" class="btn-primary">Join the Waitlist</a>
       <a href="#story" class="btn-ghost">
         The story behind the deck
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 7h10M8 3l4 4-4 4"/>
+        </svg>
       </a>
     </div>
   </div>
 
   <div class="hero-right">
-    <img src="my_deck.PNG" alt="Sohamspaces Yoga Card Deck — four cards on a warm textured surface" />
+    <div class="card-stack">
+      <div class="card-vis card-vis-1">
+        <p class="card-back-word">Svādhyāya</p>
+        <div style="width:30px;height:1px;background:var(--sand-dk);margin:0.6rem auto;"></div>
+        <p class="card-back-num">Card 47 of 83</p>
+      </div>
+      <div class="card-vis card-vis-2">
+        <p class="card-back-word">Tapas</p>
+        <div style="width:30px;height:1px;background:var(--sand-dk);margin:0.6rem auto;"></div>
+        <p class="card-back-num">Card 12 of 83</p>
+      </div>
+      <div class="card-vis card-vis-3">
+        <p class="card-word">Santosha</p>
+        <div class="card-ornament"></div>
+        <p class="card-teaching">Contentment</p>
+      </div>
+    </div>
+
     <div class="hero-stat">
       <span class="hero-stat-num">83</span>
       <span class="hero-stat-label">Cards in the Deck</span>
@@ -345,155 +1032,260 @@
   </div>
 </section>
 
-<!-- JOURNEY STRIP — unchanged -->
+<!-- JOURNEY STRIP -->
 <div class="journey-strip">
   <span class="journey-label">A journey across</span>
   <div class="journey-places">
-    <span class="journey-place">Portugal</span><span class="journey-sep">◆</span>
-    <span class="journey-place">India</span><span class="journey-sep">◆</span>
-    <span class="journey-place">Bali</span><span class="journey-sep">◆</span>
+    <span class="journey-place">Portugal</span>
+    <span class="journey-sep">◆</span>
+    <span class="journey-place">India</span>
+    <span class="journey-sep">◆</span>
+    <span class="journey-place">Bali</span>
+    <span class="journey-sep">◆</span>
     <span class="journey-place">Malaysia</span>
   </div>
 </div>
 
-<!-- ★ IMAGE 1 — full-width deck photo, right below the journey strip -->
-<div style="width:100%;overflow:hidden;line-height:0;">
-  <img
-    src="my_deck.PNG"
-    alt="Sohamspaces Yoga Card Deck — four cards laid out on a warm textured surface"
-    style="width:100%;max-height:580px;object-fit:cover;object-position:center;display:block;"
-  />
-</div>
-
-<!-- STORY — unchanged -->
+<!-- STORY -->
 <section class="story" id="story">
-  <div class="story-image" style="background:var(--sand);"></div>
+  <div class="story-image">
+    <div class="story-image-inner">
+      <svg class="story-lotus" width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="140" cy="140" r="135" stroke="#8A9E87" stroke-width="0.5"/>
+        <circle cx="140" cy="140" r="105" stroke="#8A9E87" stroke-width="0.5"/>
+        <circle cx="140" cy="140" r="75" stroke="#8A9E87" stroke-width="0.5"/>
+        <circle cx="140" cy="140" r="45" stroke="#8A9E87" stroke-width="0.5"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="#8A9E87" opacity="0.3"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(40 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(80 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(120 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(160 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(200 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(240 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(280 140 140)"/>
+        <ellipse cx="140" cy="100" rx="18" ry="42" fill="none" stroke="#8A9E87" stroke-width="0.75" transform="rotate(320 140 140)"/>
+        <circle cx="140" cy="140" r="18" fill="#8A9E87" opacity="0.25" stroke="#8A9E87" stroke-width="0.75"/>
+      </svg>
+    </div>
+  </div>
+
   <div class="story-content">
     <p class="section-label reveal">The Origin</p>
-    <h2 class="story-heading reveal reveal-delay-1">A journey in search<br>of <em>stillness</em>.</h2>
-    <p class="story-body reveal reveal-delay-2">This deck was not made in a studio. It was gathered slowly , in ashrams and rice fields, on temple steps and quiet beaches, through conversations with teachers whose wisdom had no translation.</p>
-    <p class="story-body reveal reveal-delay-2">From the Atlantic coast of Portugal to the backwaters of Kerala, the ceremonies of Bali to the forests of Malaysia , each card holds a teaching encountered on that path. Not collected, but lived.</p>
-    <p class="story-body reveal reveal-delay-3">The intention was never to create a product. It was to make the wisdom portable. To let it travel with you, wherever your own practice is calling you to go.</p>
+    <h2 class="story-heading reveal reveal-delay-1">
+      A journey in search<br>of <em>stillness</em>.
+    </h2>
+    <p class="story-body reveal reveal-delay-2">
+      This deck was not made in a studio. It was gathered slowly ,
+      in ashrams and rice fields, on temple steps and quiet beaches,
+      through conversations with teachers whose wisdom had no translation.
+    </p>
+    <p class="story-body reveal reveal-delay-2">
+      From the Atlantic coast of Portugal to the backwaters of Kerala,
+      the ceremonies of Bali to the forests of Malaysia ,
+      each card holds a teaching encountered on that path.
+      Not collected, but lived.
+    </p>
+    <p class="story-body reveal reveal-delay-3">
+      The intention was never to create a product.
+      It was to make the wisdom portable. To let it travel with you,
+      wherever your own practice is calling you to go.
+    </p>
   </div>
 </section>
 
-<!-- ★ WHAT'S INSIDE — with product image on the left -->
+<!-- WHAT'S INSIDE -->
 <section class="inside" id="inside">
   <div class="inside-header">
     <p class="section-label reveal" style="justify-content: center;">What You Receive</p>
-    <h2 class="inside-title reveal reveal-delay-1">Everything you need<br>to begin <em>within</em>.</h2>
-    <p class="inside-sub reveal reveal-delay-2">The deck arrives as a complete practice, nothing extra to source.</p>
-
-    <!-- ★ IMAGE 2 — close-up deck photo, right below the subtitle -->
-    <div class="reveal reveal-delay-3" style="max-width:700px;margin:2.5rem auto 0;">
-      <img
-        src="my_deck.PNG"
-        alt="Close-up of Sohamspaces Yoga Cards — earthy gradient cards with spiritual symbols"
-        style="width:100%;border-radius:10px;box-shadow:0 20px 60px rgba(44,44,40,0.13);display:block;"
-      />
-    </div>
+    <h2 class="inside-title reveal reveal-delay-1">
+      Everything you need<br>to begin <em>within</em>.
+    </h2>
+    <p class="inside-sub reveal reveal-delay-2">
+      The deck arrives as a complete practice, nothing extra to source.
+    </p>
   </div>
 
-  <div class="inside-body">
-    <!-- ★ PLACEMENT 2: sticky image beside the contents list -->
-    <div class="inside-image reveal">
-      <div class="inside-image-wrap">
-        <img
-          src="my_deck.PNG"
-          alt="Close-up of Sohamspaces Yoga Cards — warm gradient cards with moon, sun and Om symbols"
-        />
-        <div class="inside-badge">
-          <span class="inside-badge-num">83</span>
-          <span class="inside-badge-word">Cards</span>
-        </div>
+  <div class="inside-grid">
+    <div class="inside-item reveal">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <rect x="2" y="1" width="12" height="14" rx="1.5"/>
+          <line x1="5" y1="5" x2="11" y2="5"/>
+          <line x1="5" y1="8" x2="11" y2="8"/>
+          <line x1="5" y1="11" x2="8" y2="11"/>
+        </svg>
       </div>
+      <p class="inside-item-title">83 Teaching Cards</p>
+      <p class="inside-item-desc">One teaching per card, each drawn from a different moment along the journey. Enough variety that no two mornings begin the same way.</p>
     </div>
 
-    <!-- original items list — unchanged -->
-    <div class="inside-grid">
-      <div class="inside-item reveal">
-        <div class="inside-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg></div>
-        <p class="inside-item-title">83 Teaching Cards</p>
-        <p class="inside-item-desc">One teaching per card, each drawn from a different moment along the journey. Enough variety that no two mornings begin the same way.</p>
+    <div class="inside-item reveal reveal-delay-1">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <circle cx="8" cy="8" r="6"/>
+          <path d="M8 5v3l2 2"/>
+        </svg>
       </div>
-      <div class="inside-item reveal reveal-delay-1">
-        <div class="inside-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div>
-        <p class="inside-item-title">An Introduction Card</p>
-        <p class="inside-item-desc">A guide to working with the deck, whether in a solo morning practice, a group setting, or a spontaneous moment of need throughout the day.</p>
+      <p class="inside-item-title">An Introduction Card</p>
+      <p class="inside-item-desc">A guide to working with the deck, whether in a solo morning practice, a group setting, or a spontaneous moment of need throughout the day.</p>
+    </div>
+
+    <div class="inside-item reveal reveal-delay-2">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M8 2L9.5 6h4L10 8.5l1.5 4L8 10l-3.5 2.5L6 8.5 2.5 6h4L8 2z"/>
+        </svg>
       </div>
-      <div class="inside-item reveal reveal-delay-2">
-        <div class="inside-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><path d="M8 2L9.5 6h4L10 8.5l1.5 4L8 9l-3.5 2.5L6 8.5 2.5 6h4L8 2z"/></svg></div>
-        <p class="inside-item-title">Breath &amp; Stillness</p>
-        <p class="inside-item-desc">Cards dedicated to the foundational practices of pranayama and presence, returning the body to its natural intelligence.</p>
+      <p class="inside-item-title">Breath &amp; Stillness</p>
+      <p class="inside-item-desc">Cards dedicated to the foundational practices of pranayama and presence, returning the body to its natural intelligence.</p>
+    </div>
+
+    <div class="inside-item reveal">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M8 13c0 0-5-3.5-5-7a5 5 0 0110 0c0 3.5-5 7-5 7z"/>
+        </svg>
       </div>
-      <div class="inside-item reveal">
-        <div class="inside-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><path d="M8 13c0 0-5-3.5-5-7a5 5 0 0110 0c0 3.5-5 7-5 7z"/></svg></div>
-        <p class="inside-item-title">Inner Strength &amp; Letting Go</p>
-        <p class="inside-item-desc">Reflections on the practices that build resilience and the ones that ask you to release, the two inseparable movements of yoga.</p>
+      <p class="inside-item-title">Inner Strength &amp; Letting Go</p>
+      <p class="inside-item-desc">Reflections on the practices that build resilience and the ones that ask you to release, the two inseparable movements of yoga.</p>
+    </div>
+
+    <div class="inside-item reveal reveal-delay-1">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M2 8h12M8 2v12"/>
+          <circle cx="8" cy="8" r="3"/>
+        </svg>
       </div>
-      <div class="inside-item reveal reveal-delay-1">
-        <div class="inside-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><path d="M2 8h12M8 2v12"/><circle cx="8" cy="8" r="3"/></svg></div>
-        <p class="inside-item-title">Karma &amp; Intention</p>
-        <p class="inside-item-desc">Teachings on how we move through the world, the quality of attention we bring to action, and the freedom that comes from releasing the result.</p>
+      <p class="inside-item-title">Karma &amp; Intention</p>
+      <p class="inside-item-desc">Teachings on how we move through the world, the quality of attention we bring to action, and the freedom that comes from releasing the result.</p>
+    </div>
+
+    <div class="inside-item reveal reveal-delay-2">
+      <div class="inside-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M8 1l1 4h4l-3 2.5 1 4L8 9l-3 2.5 1-4L3 5h4L8 1z"/>
+        </svg>
       </div>
-      <div class="inside-item reveal reveal-delay-2">
-        <div class="inside-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><path d="M8 1l1 4h4l-3 2.5 1 4L8 9l-3 2.5 1-4L3 5h4L8 1z"/></svg></div>
-        <p class="inside-item-title">A Founder's Note</p>
-        <p class="inside-item-desc">A personal letter on why this deck exists, the moments of doubt and clarity, the teachers who shaped it, and the hope for how it might serve you.</p>
-      </div>
+      <p class="inside-item-title">A Founder's Note</p>
+      <p class="inside-item-desc">A personal letter on why this deck exists, the moments of doubt and clarity, the teachers who shaped it, and the hope for how it might serve you.</p>
     </div>
   </div>
 </section>
 
-<!-- HOW TO USE — unchanged -->
+<!-- HOW TO USE -->
 <section class="how" id="practice">
   <div class="how-left">
     <p class="how-section-label reveal">The Practice</p>
-    <h2 class="how-title reveal reveal-delay-1">Simple enough for any morning.<br><em>Deep enough for a lifetime.</em></h2>
-    <p class="how-body reveal reveal-delay-2">There is no wrong way to use these cards. But here is the practice that has served best , whether you have five minutes or an hour, whether you are stepping onto your mat or heading into your day.</p>
+    <h2 class="how-title reveal reveal-delay-1">
+      Simple enough for any morning.<br><em>Deep enough for a lifetime.</em>
+    </h2>
+    <p class="how-body reveal reveal-delay-2">
+      There is no wrong way to use these cards.
+      But here is the practice that has served best ,
+      whether you have five minutes or an hour,
+      whether you are stepping onto your mat or heading into your day.
+    </p>
   </div>
+
   <div class="how-steps">
-    <div class="how-step reveal"><span class="how-step-num">I</span><div><p class="how-step-text">Arrive in stillness.</p><p class="how-step-sub">A single conscious breath before you reach for the deck. Let the body settle from wherever it's been.</p></div></div>
-    <div class="how-step reveal reveal-delay-1"><span class="how-step-num">II</span><div><p class="how-step-text">Draw with openness.</p><p class="how-step-sub">Choose without looking, or let your eyes be drawn to one. Trust the impulse, it is rarely accidental.</p></div></div>
-    <div class="how-step reveal reveal-delay-2"><span class="how-step-num">III</span><div><p class="how-step-text">Sit with the teaching.</p><p class="how-step-sub">Read it once. Then again slowly. Let the meaning settle before your mind begins to interpret.</p></div></div>
-    <div class="how-step reveal reveal-delay-3"><span class="how-step-num">IV</span><div><p class="how-step-text">Carry the intention.</p><p class="how-step-sub">Into your practice. Into your day. Return to it when you notice yourself drifting from yourself.</p></div></div>
+    <div class="how-step reveal">
+      <span class="how-step-num">I</span>
+      <div>
+        <p class="how-step-text">Arrive in stillness.</p>
+        <p class="how-step-sub">A single conscious breath before you reach for the deck. Let the body settle from wherever it's been.</p>
+      </div>
+    </div>
+    <div class="how-step reveal reveal-delay-1">
+      <span class="how-step-num">II</span>
+      <div>
+        <p class="how-step-text">Draw with openness.</p>
+        <p class="how-step-sub">Choose without looking, or let your eyes be drawn to one. Trust the impulse, it is rarely accidental.</p>
+      </div>
+    </div>
+    <div class="how-step reveal reveal-delay-2">
+      <span class="how-step-num">III</span>
+      <div>
+        <p class="how-step-text">Sit with the teaching.</p>
+        <p class="how-step-sub">Read it once. Then again slowly. Let the meaning settle before your mind begins to interpret.</p>
+      </div>
+    </div>
+    <div class="how-step reveal reveal-delay-3">
+      <span class="how-step-num">IV</span>
+      <div>
+        <p class="how-step-text">Carry the intention.</p>
+        <p class="how-step-sub">Into your practice. Into your day. Return to it when you notice yourself drifting from yourself.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- BENEFITS — unchanged -->
+<!-- BENEFITS -->
 <section class="benefits" id="benefits">
   <div class="benefits-header">
     <p class="section-label reveal">What the Practice Offers</p>
-    <h2 class="benefits-title reveal reveal-delay-1">Small shifts.<br><em>Lasting change.</em></h2>
+    <h2 class="benefits-title reveal reveal-delay-1">
+      Small shifts.<br><em>Lasting change.</em>
+    </h2>
   </div>
+
   <div class="benefits-grid">
-    <div class="benefit-item reveal"><p class="benefit-title"><span class="benefit-dot"></span>A quieter nervous system</p><p class="benefit-desc">A moment of conscious intention before practice creates measurable calm, inviting the body out of reactivity and into presence.</p></div>
-    <div class="benefit-item reveal reveal-delay-1"><p class="benefit-title"><span class="benefit-dot"></span>Deeper self-understanding</p><p class="benefit-desc">Each card names something that has always been there. The act of recognition, repeated daily, becomes its own kind of study.</p></div>
-    <div class="benefit-item reveal reveal-delay-2"><p class="benefit-title"><span class="benefit-dot"></span>A more purposeful practice</p><p class="benefit-desc">Moving with an intention changes how you move. The teaching becomes an anchor the body can return to when the mind wanders.</p></div>
-    <div class="benefit-item reveal reveal-delay-3"><p class="benefit-title"><span class="benefit-dot"></span>A thread through your day</p><p class="benefit-desc">The card you draw in the morning travels with you, a quiet reference point in moments of stress, distraction, or doubt.</p></div>
+    <div class="benefit-item reveal">
+      <p class="benefit-title"><span class="benefit-dot"></span>A quieter nervous system</p>
+      <p class="benefit-desc">A moment of conscious intention before practice creates measurable calm, inviting the body out of reactivity and into presence.</p>
+    </div>
+    <div class="benefit-item reveal reveal-delay-1">
+      <p class="benefit-title"><span class="benefit-dot"></span>Deeper self-understanding</p>
+      <p class="benefit-desc">Each card names something that has always been there. The act of recognition, repeated daily, becomes its own kind of study.</p>
+    </div>
+    <div class="benefit-item reveal reveal-delay-2">
+      <p class="benefit-title"><span class="benefit-dot"></span>A more purposeful practice</p>
+      <p class="benefit-desc">Moving with an intention changes how you move. The teaching becomes an anchor the body can return to when the mind wanders.</p>
+    </div>
+    <div class="benefit-item reveal reveal-delay-3">
+      <p class="benefit-title"><span class="benefit-dot"></span>A thread through your day</p>
+      <p class="benefit-desc">The card you draw in the morning travels with you, a quiet reference point in moments of stress, distraction, or doubt.</p>
+    </div>
   </div>
 </section>
 
-<!-- TRUST — unchanged -->
+<!-- TRUST / TESTIMONIAL -->
 <section class="trust">
-  <p class="trust-quote reveal">"The right teaching at the right moment doesn't feel like coincidence. It feels like remembering something you've always known."</p>
+  <p class="trust-quote reveal">
+    "The right teaching at the right moment doesn't feel like coincidence.
+    It feels like remembering something you've always known."
+  </p>
   <p class="trust-attr reveal reveal-delay-1">, From the Founder's Note</p>
-  <p class="trust-note reveal reveal-delay-2">Early response cards are with our first circle of practitioners. Testimonials will be added here before the public launch.</p>
+  <p class="trust-note reveal reveal-delay-2">
+    Early response cards are with our first circle of practitioners.
+    Testimonials will be added here before the public launch.
+  </p>
 </section>
 
-<!-- SIGNUP — unchanged -->
+<!-- SIGNUP -->
 <section class="signup" id="signup">
   <div class="signup-left">
     <p class="signup-eyebrow reveal">Join the Waitlist</p>
-    <h2 class="signup-title reveal reveal-delay-1">Be first to know<br>when the deck<br><em>is ready.</em></h2>
-    <p class="signup-body reveal reveal-delay-2">The deck is in its final stages of production. Leave your email and we'll reach you the moment it's ready to ship , along with a note on what to expect when it arrives. No noise. One message.</p>
+    <h2 class="signup-title reveal reveal-delay-1">
+      Be first to know<br>when the deck<br><em>is ready.</em>
+    </h2>
+    <p class="signup-body reveal reveal-delay-2">
+      The deck is in its final stages of production.
+      Leave your email and we'll reach you the moment it's ready to ship ,
+      along with a note on what to expect when it arrives.
+      No noise. One message.
+    </p>
   </div>
+
   <div class="signup-right">
     <form class="signup-form" id="waitlist-form" onsubmit="handleSignup(event)">
       <input type="email" placeholder="Your email address" required autocomplete="email" id="signup-email">
       <div class="signup-consent">
         <input type="checkbox" id="consent" required>
-        <label for="consent">I'd like to receive a single notification when the Sohamspaces deck launches. No marketing. No spam. Just the one message.</label>
+        <label for="consent">
+          I'd like to receive a single notification when the Sohamspaces deck launches.
+          No marketing. No spam. Just the one message.
+        </label>
       </div>
       <button type="submit" class="signup-submit">Reserve My Spot</button>
       <p class="signup-privacy">Your email is used only for this notification and nothing else.</p>
@@ -505,12 +1297,13 @@
   </div>
 </section>
 
-<!-- FOOTER — unchanged -->
+<!-- FOOTER -->
 <footer>
   <div style="display:flex;flex-direction:column;gap:0.4rem;">
     <a href="https://www.sohamspaces.com" class="footer-logo">Sohamspaces</a>
     <span class="footer-tagline">Ancient wisdom for modern souls.</span>
   </div>
+
   <div class="footer-links">
     <a href="https://www.sohamspaces.com/about">About</a>
     <a href="https://www.sohamspaces.com/contact">Contact</a>
@@ -519,43 +1312,132 @@
     <a href="https://www.sohamspaces.com/terms-conditions">Terms</a>
     <a href="https://www.sohamspaces.com/refund-policy">Refunds</a>
   </div>
+
   <div class="footer-social">
-    <a href="https://www.instagram.com/sohamspaces/" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-    <a href="mailto:info@sohamspaces.com" aria-label="Email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
+    <a href="https://www.instagram.com/sohamspaces/" aria-label="Instagram">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <a href="mailto:info@sohamspaces.com" aria-label="Email">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="M2 7l10 7 10-7"/>
+      </svg>
+    </a>
   </div>
 </footer>
 
 <script>
+  // Nav scroll behaviour
   const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
 
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
-  document.querySelectorAll('.hero .reveal').forEach((el, i) => { setTimeout(() => el.classList.add('visible'), 100 + i * 120); });
 
-  function handleSignup(e) { e.preventDefault(); document.getElementById('waitlist-form').style.display = 'none'; document.getElementById('signup-success').classList.add('visible'); }
+  // Trigger hero items immediately
+  document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 100 + i * 120);
+  });
 
-  function reportHeight() { const height = document.documentElement.scrollHeight; window.parent.postMessage({ type: 'iwh', height: height }, '*'); }
-  window.addEventListener('load', function() { reportHeight(); let count = 0; const interval = setInterval(function() { reportHeight(); count++; if (count > 20) clearInterval(interval); }, 250); });
+  // Signup form
+  function handleSignup(e) {
+    e.preventDefault();
+    const form = document.getElementById('waitlist-form');
+    const success = document.getElementById('signup-success');
+    form.style.display = 'none';
+    success.classList.add('visible');
+  }
+
+  // Report full page height to Wix so the iframe resizes correctly
+  function reportHeight() {
+    const height = document.documentElement.scrollHeight;
+    window.parent.postMessage({ type: 'iwh', height: height }, '*');
+  }
+  // Report on load and repeatedly for 5 seconds to catch fonts/images loading
+  window.addEventListener('load', function() {
+    reportHeight();
+    let count = 0;
+    const interval = setInterval(function() {
+      reportHeight();
+      count++;
+      if (count > 20) clearInterval(interval);
+    }, 250);
+  });
+  // Also report immediately
   reportHeight();
 
+  // Mobile hamburger menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : ''; });
-    mobileMenu.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }); });
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
   }
 
-  function setCookie(name, value, days) { const d = new Date(); d.setTime(d.getTime() + (days*24*60*60*1000)); document.cookie = name+"="+value+";expires="+d.toUTCString()+";path=/"; }
-  function getCookie(name) { const ca = document.cookie.split(";"); for (let c of ca) { c = c.trim(); if (c.startsWith(name+"=")) return c.substring(name.length+1); } return ""; }
-  function acceptCookies() { setCookie("cookie_consent","accepted",365); document.getElementById("cookie-banner").classList.remove("visible"); }
-  function declineCookies() { setCookie("cookie_consent","declined",365); document.getElementById("cookie-banner").classList.remove("visible"); }
-  window.addEventListener("load", function() { if (!getCookie("cookie_consent")) { setTimeout(() => { const banner = document.getElementById("cookie-banner"); if (banner) banner.classList.add("visible"); }, 1500); } });
+  // Cookie consent
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/";
+  }
+  function getCookie(name) {
+    const ca = document.cookie.split(";");
+    for (let c of ca) {
+      c = c.trim();
+      if (c.startsWith(name + "=")) return c.substring(name.length + 1);
+    }
+    return "";
+  }
+  function acceptCookies() {
+    setCookie("cookie_consent", "accepted", 365);
+    document.getElementById("cookie-banner").classList.remove("visible");
+  }
+  function declineCookies() {
+    setCookie("cookie_consent", "declined", 365);
+    document.getElementById("cookie-banner").classList.remove("visible");
+  }
+  // Show banner if no consent yet
+  window.addEventListener("load", function() {
+    if (!getCookie("cookie_consent")) {
+      setTimeout(() => {
+        const banner = document.getElementById("cookie-banner");
+        if (banner) banner.classList.add("visible");
+      }, 1500);
+    }
+  });
 </script>
 
+<!-- Cookie Banner -->
 <div class="cookie-banner" id="cookie-banner">
-  <p class="cookie-text">We use cookies to understand how visitors use our site (Google Analytics) and to remember your preferences. By continuing you agree to our <a href="https://www.sohamspaces.com/privacy-policy">Privacy Policy</a>.</p>
+  <p class="cookie-text">
+    We use cookies to understand how visitors use our site (Google Analytics) and to remember your preferences.
+    By continuing you agree to our <a href="https://www.sohamspaces.com/privacy-policy">Privacy Policy</a>.
+  </p>
   <div class="cookie-actions">
     <button class="cookie-decline" onclick="declineCookies()">Decline</button>
     <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
