@@ -60,63 +60,95 @@
   .journey-section:nth-child(even) { direction: rtl; }
   .journey-section:nth-child(even) > * { direction: ltr; }
 
-  /* Image shows at its natural size, just constrained by the column width */
+  /* Image panel — fixed height, all photos consistent */
   .journey-visual {
     position: relative;
-    display: flex;
-    align-items: flex-start;
     background: var(--sand);
-    padding: 2.5rem;        /* breathing room around the photo */
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
   }
   .journey-visual img {
-    width: 100%;            /* fills the column */
-    height: auto;           /* natural aspect ratio — NO cropping */
-    max-width: 360px;       /* caps the size so it stays compact */
+    width: 100%;
+    height: 220px;          /* consistent height across all photos */
+    object-fit: contain;    /* shows full image, no cropping, letterboxed in padding */
+    object-position: center;
     display: block;
-    border-radius: 2px;
   }
   .journey-place-name {
     font-family: var(--serif);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 300;
     font-style: italic;
     color: var(--ink-lt);
-    opacity: 0.4;
+    opacity: 0.35;
     position: absolute;
-    bottom: 1.5rem;
-    right: 2rem;
+    bottom: 1rem;
+    right: 1.5rem;
     line-height: 1;
     pointer-events: none;
   }
 
+  /* Content panel — 2 columns inside: left = num+title, right = body */
   .journey-content {
-    padding: 3.5rem 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 2rem;
+    row-gap: 0.6rem;
+    align-content: center;
     background: var(--cream);
   }
-  .journey-num { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; color: var(--sand-dk); line-height: 1; margin-bottom: 1rem; }
-  .journey-title { font-family: var(--serif); font-size: clamp(1.5rem, 2vw, 2rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
+  .journey-num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--sand-dk);
+    line-height: 1;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    padding-top: 0.2rem;
+  }
+  .journey-title {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 1.8vw, 1.75rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ink);
+    grid-column: 1;
+    grid-row: 2;
+  }
   .journey-title em { font-style: italic; color: var(--sage-dk); }
-  .journey-body { font-size: 0.85rem; font-weight: 300; line-height: 1.95; color: var(--ink-mid); max-width: 42ch; }
+  .journey-body {
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--ink-mid);
+    grid-column: 2;
+    grid-row: 1 / span 2;   /* spans both num and title rows */
+    align-self: center;
+  }
 
   /* FOUNDER */
   .founder { background: var(--sage-dk); padding: 6rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
   .founder-visual {
     position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.05);
     padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
   }
   .founder-visual img {
     width: 100%;
-    height: auto;           /* natural ratio — NO cropping */
-    max-width: 320px;
+    height: 280px;
+    object-fit: contain;
+    object-position: center;
     display: block;
-    border-radius: 2px;
   }
   .founder-label-box { position: absolute; bottom: 1rem; left: 1.5rem; }
   .founder-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--white); }
@@ -168,12 +200,15 @@
     .page-hero { grid-template-columns: 1fr; padding: 8rem 2rem 4rem; gap: 2rem; }
     .journey-section { grid-template-columns: 1fr; }
     .journey-section:nth-child(even) { direction: ltr; }
-    .journey-visual { padding: 1.5rem; }
-    .journey-visual img { max-width: 100%; }
-    .journey-content { padding: 2rem 1.5rem; }
+    .journey-visual { min-height: auto; padding: 1.5rem; }
+    .journey-visual img { height: 180px; }
+    .journey-content { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+    .journey-num { grid-row: 1; grid-column: 1; }
+    .journey-title { grid-row: 2; grid-column: 1; }
+    .journey-body { grid-row: 3; grid-column: 1; }
     .founder { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 2.5rem; }
-    .founder-visual { padding: 1.5rem; }
-    .founder-visual img { max-width: 100%; }
+    .founder-visual { min-height: auto; padding: 1.5rem; }
+    .founder-visual img { height: 220px; }
     .values-grid { grid-template-columns: 1fr 1fr; }
     footer { padding: 2.5rem 1.5rem; flex-direction: column; align-items: flex-start; }
   }
@@ -259,10 +294,10 @@
       <img src="https://www.sohamspaces.com/photo-portugal.png" alt="Teaching yoga in Portugal">
       <span class="journey-place-name">Portugal</span>
     </div>
-    <div class="journey-content">
-      <span class="journey-num reveal">01</span>
-      <h2 class="journey-title reveal reveal-delay-1">Portugal.<br><em>Where it began.</em></h2>
-      <p class="journey-body reveal reveal-delay-2">Growing up on the Silver Coast of Portugal, yoga was simply part of life. My mother ran her own yoga studio, and the practice was woven into daily life from the very beginning, steady and unhurried, like the Atlantic itself. Then came the decision to leave, to move to the UK for university, and with that distance came the first real question: what do I actually carry with me when everything familiar is left behind?</p>
+    <div class="journey-content reveal">
+      <span class="journey-num">01</span>
+      <h2 class="journey-title">Portugal.<br><em>Where it began.</em></h2>
+      <p class="journey-body">Growing up on the Silver Coast of Portugal, yoga was simply part of life. My mother ran her own yoga studio, and the practice was woven into daily life from the very beginning, steady and unhurried, like the Atlantic itself. Then came the decision to leave, to move to the UK for university, and with that distance came the first real question: what do I actually carry with me when everything familiar is left behind?</p>
     </div>
   </div>
 
@@ -271,10 +306,10 @@
       <img src="https://www.sohamspaces.com/photo-india.jpg" alt="In Goa, India">
       <span class="journey-place-name">India</span>
     </div>
-    <div class="journey-content">
-      <span class="journey-num reveal">02</span>
-      <h2 class="journey-title reveal reveal-delay-1">India.<br><em>Where it deepened.</em></h2>
-      <p class="journey-body reveal reveal-delay-2">Goa, home to the oldest yoga institute in the world, founded in 1918. Teachers whose words reshaped what yoga meant, not a physical practice, but a way of seeing. The Sanskrit names for states that had no English translation. The understanding that the practice was never separate from life. The first cards were written in notebooks here.</p>
+    <div class="journey-content reveal">
+      <span class="journey-num">02</span>
+      <h2 class="journey-title">India.<br><em>Where it deepened.</em></h2>
+      <p class="journey-body">Goa, home to the oldest yoga institute in the world, founded in 1918. Teachers whose words reshaped what yoga meant, not a physical practice, but a way of seeing. The Sanskrit names for states that had no English translation. The understanding that the practice was never separate from life. The first cards were written in notebooks here.</p>
     </div>
   </div>
 
@@ -283,10 +318,10 @@
       <img src="https://www.sohamspaces.com/photo-bali.jpg" alt="Volunteering in Bali">
       <span class="journey-place-name">Bali</span>
     </div>
-    <div class="journey-content">
-      <span class="journey-num reveal">03</span>
-      <h2 class="journey-title reveal reveal-delay-1">Bali.<br><em>Where it opened.</em></h2>
-      <p class="journey-body reveal reveal-delay-2">A month of volunteering, teaching yoga on a farm and living inside the real culture, not as a visitor but as someone with a role and a responsibility. The ceremonies witnessed at dawn, the offerings, the rituals woven into every ordinary moment, the understanding that devotion is not a separate practice but the quality of attention brought to whatever is in front of you.</p>
+    <div class="journey-content reveal">
+      <span class="journey-num">03</span>
+      <h2 class="journey-title">Bali.<br><em>Where it opened.</em></h2>
+      <p class="journey-body">A month of volunteering, teaching yoga on a farm and living inside the real culture, not as a visitor but as someone with a role and a responsibility. The ceremonies witnessed at dawn, the offerings, the rituals woven into every ordinary moment, the understanding that devotion is not a separate practice but the quality of attention brought to whatever is in front of you.</p>
     </div>
   </div>
 
@@ -295,10 +330,10 @@
       <img src="https://www.sohamspaces.com/photo-malaysia.jpg" alt="Teaching yoga in Malaysia">
       <span class="journey-place-name">Malaysia</span>
     </div>
-    <div class="journey-content">
-      <span class="journey-num reveal">04</span>
-      <h2 class="journey-title reveal reveal-delay-1">Malaysia.<br><em>Where it settled.</em></h2>
-      <p class="journey-body reveal reveal-delay-2">Teaching yoga in a hostel, for travellers passing through, people from every background and every level of experience. It was here that the practice became truly portable, stripped of any setting or expectation, just the teaching and whoever showed up. The realisation settled: this was never about a particular place. The work of distilling it all into 83 cards began here.</p>
+    <div class="journey-content reveal">
+      <span class="journey-num">04</span>
+      <h2 class="journey-title">Malaysia.<br><em>Where it settled.</em></h2>
+      <p class="journey-body">Teaching yoga in a hostel, for travellers passing through, people from every background and every level of experience. It was here that the practice became truly portable, stripped of any setting or expectation, just the teaching and whoever showed up. The realisation settled: this was never about a particular place. The work of distilling it all into 83 cards began here.</p>
     </div>
   </div>
 
@@ -307,10 +342,10 @@
       <img src="https://www.sohamspaces.com/photo-uk.jpg" alt="Teaching yoga in Birmingham, UK">
       <span class="journey-place-name">United Kingdom</span>
     </div>
-    <div class="journey-content">
-      <span class="journey-num reveal">05</span>
-      <h2 class="journey-title reveal reveal-delay-1">United Kingdom.<br><em>Where it found a home.</em></h2>
-      <p class="journey-body reveal reveal-delay-2">The UK gave the journey a place to land. Since 2024, teaching has become not just a practice but a purpose, sharing what was gathered across four countries with students in Birmingham and beyond. This is where Sohamspaces came into being, and where the work of bringing ancient wisdom into everyday life continues.</p>
+    <div class="journey-content reveal">
+      <span class="journey-num">05</span>
+      <h2 class="journey-title">United Kingdom.<br><em>Where it found a home.</em></h2>
+      <p class="journey-body">The UK gave the journey a place to land. Since 2024, teaching has become not just a practice but a purpose, sharing what was gathered across four countries with students in Birmingham and beyond. This is where Sohamspaces came into being, and where the work of bringing ancient wisdom into everyday life continues.</p>
     </div>
   </div>
 
