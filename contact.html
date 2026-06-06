@@ -124,6 +124,12 @@
     .nav-back { display: none !important; }
     .nav-hamburger { display: flex !important; }
   }
+
+  .contact-left { position: relative; overflow: hidden; }
+  .contact-left-photo { position: absolute; inset: 0; z-index: 0; }
+  .contact-left-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .contact-left-photo::after { content: ""; position: absolute; inset: 0; background: rgba(62,78,60,0.72); }
+  .contact-left > *:not(.contact-left-photo) { position: relative; z-index: 1; }
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M09HG30VR"></script>
@@ -160,6 +166,9 @@
 <div class="contact-wrap">
   <!-- LEFT -->
   <div class="contact-left">
+  <div class="contact-left-photo">
+    <img src="https://www.sohamspaces.com/photo-india-contact.jpg" alt="Adriana in India">
+  </div>
     <div class="contact-intro">
       <p class="section-label reveal">Get in Touch</p>
       <h1 class="contact-title reveal reveal-delay-1">
