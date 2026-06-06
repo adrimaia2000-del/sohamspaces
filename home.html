@@ -66,6 +66,7 @@
 
   /* INTRO */
   .intro { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+  .intro-left { }
   .section-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
   .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
   .intro-title { font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 2rem; }
@@ -87,74 +88,8 @@
   .feature-quote { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; font-style: italic; color: var(--white); line-height: 1.5; margin-bottom: 1.5rem; }
   .feature-attr { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-lt); }
 
-  /* ── DECK SHOWCASE (NEW) ── */
-  .deck-showcase {
-    padding: 8rem 4rem;
-    background: var(--sand);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 7rem;
-    align-items: center;
-  }
-  .deck-showcase__image {
-    position: relative;
-  }
-  .deck-showcase__image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 32px 80px rgba(44,44,40,0.14), 0 8px 24px rgba(44,44,40,0.07);
-    display: block;
-  }
-  /* decorative corner frame */
-  .deck-showcase__image::after {
-    content: '';
-    position: absolute;
-    bottom: -16px;
-    right: -16px;
-    width: 65%;
-    height: 65%;
-    border: 1px solid rgba(138,158,135,0.35);
-    border-radius: 6px;
-    z-index: -1;
-  }
-  .deck-showcase__text .ds-label {
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .deck-showcase__text .ds-label::before {
-    content: '';
-    display: block;
-    width: 1.5rem;
-    height: 1px;
-    background: var(--gold);
-  }
-  .deck-showcase__text h2 {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 3.2vw, 3rem);
-    font-weight: 300;
-    line-height: 1.2;
-    color: var(--ink);
-    margin-bottom: 1.2rem;
-  }
-  .deck-showcase__text h2 em { font-style: italic; color: var(--sage-dk); }
-  .deck-showcase__text p {
-    font-size: 0.9rem;
-    font-weight: 300;
-    line-height: 2;
-    color: var(--ink-mid);
-    max-width: 42ch;
-    margin-bottom: 2rem;
-  }
-
   /* OFFERINGS */
-  .offerings { padding: 8rem 4rem; background: var(--cream); }
+  .offerings { padding: 8rem 4rem; background: var(--sand); }
   .offerings-header { text-align: center; margin-bottom: 5rem; }
   .offerings-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; color: var(--ink); line-height: 1.2; margin-top: 1rem; }
   .offerings-title em { font-style: italic; color: var(--sage-dk); }
@@ -167,9 +102,8 @@
   .offering-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem; }
 
   /* PHILOSOPHY */
-  .philosophy { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; background: var(--sand); }
-  .philosophy-visual { position: relative; height: 480px; overflow: hidden; }
-  .philosophy-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .philosophy { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; background: var(--cream); }
+  .philosophy-visual { position: relative; height: 480px; background: var(--sand); display: flex; align-items: center; justify-content: center; }
   .philosophy-title { font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 2rem; margin-top: 1rem; }
   .philosophy-title em { font-style: italic; color: var(--sage-dk); }
   .philosophy-body { font-size: 0.9rem; font-weight: 300; line-height: 2; color: var(--ink-mid); margin-bottom: 1.5rem; }
@@ -193,8 +127,6 @@
   @media (max-width: 900px) {
     nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
     .intro { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
-    .deck-showcase { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
-    .deck-showcase__image::after { display: none; }
     .offerings-grid { grid-template-columns: 1fr; }
     .philosophy { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
     .philosophy-visual { height: 280px; }
@@ -218,6 +150,9 @@
     .nav-back { display: none !important; }
     .nav-hamburger { display: flex !important; }
   }
+
+  .philosophy-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .intro-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* Cookie Banner */
   .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--cream); border-top: 1px solid var(--sand-dk); padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; box-shadow: 0 -4px 24px rgba(30,30,26,0.08); transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); flex-wrap: wrap; }
@@ -251,6 +186,7 @@
     <li><a href="https://adrimaia2000-del.github.io/sohamspaces/contact.html">Contact</a></li>
   </ul>
   <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="nav-cta">Join the Waitlist</a>
+
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -262,7 +198,7 @@
     <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="mobile-menu-cta">Join the Waitlist</a>
 </div>
 
-<!-- HERO — unchanged -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
     <svg width="600" height="600" viewBox="0 0 600 600" fill="none">
@@ -278,8 +214,12 @@
     </svg>
   </div>
   <p class="hero-eyebrow reveal">Ancient Wisdom · Modern Life</p>
-  <h1 class="hero-title reveal reveal-delay-1">So.<em>Ham.</em><br>Spaces.</h1>
-  <p class="hero-sub reveal reveal-delay-2">A home for the teachings that bring you back to yourself.</p>
+  <h1 class="hero-title reveal reveal-delay-1">
+    So.<em>Ham.</em><br>Spaces.
+  </h1>
+  <p class="hero-sub reveal reveal-delay-2">
+    A home for the teachings that bring you back to yourself.
+  </p>
   <div class="hero-actions reveal reveal-delay-3">
     <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="btn-primary">Explore the Yoga Cards</a>
     <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="btn-ghost">
@@ -293,64 +233,73 @@
   </div>
 </section>
 
-<!-- INTRO — unchanged -->
+<!-- INTRO -->
 <section class="intro">
   <div class="intro-left">
     <p class="section-label reveal">What is Sohamspaces</p>
-    <h2 class="intro-title reveal reveal-delay-1">A space to pause,<br><em>breathe, and return.</em></h2>
-    <p class="intro-body reveal reveal-delay-2">Soham is a Sanskrit mantra, "I am that." It is the sound of the breath itself, the oldest teaching there is. Sohamspaces was born from a journey across four countries in search of what it means to live that truth.</p>
-    <p class="intro-body reveal reveal-delay-2">What emerged was a collection of teachings, tools, and practices to carry ancient wisdom into an ordinary day.</p>
+    <h2 class="intro-title reveal reveal-delay-1">
+      A space to pause,<br><em>breathe, and return.</em>
+    </h2>
+    <p class="intro-body reveal reveal-delay-2">
+      Soham is a Sanskrit mantra, "I am that." It is the sound of the breath itself,
+      the oldest teaching there is. Sohamspaces was born from a journey across
+      four countries in search of what it means to live that truth.
+    </p>
+    <p class="intro-body reveal reveal-delay-2">
+      What emerged was a collection of teachings, tools, and practices
+      to carry ancient wisdom into an ordinary day.
+    </p>
     <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="btn-ghost reveal reveal-delay-3">
       Read the full story
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
     </a>
   </div>
   <div class="intro-right reveal reveal-delay-1">
-    <div class="intro-stat"><span class="stat-num">83</span><span class="stat-label">Teaching Cards</span></div>
-    <div class="intro-stat"><span class="stat-num">4</span><span class="stat-label">Countries</span></div>
-    <div class="intro-stat"><span class="stat-num">1</span><span class="stat-label">Practice</span></div>
-    <div class="intro-stat"><span class="stat-num">∞</span><span class="stat-label">Moments of return</span></div>
+    <div class="intro-stat">
+      <span class="stat-num">83</span>
+      <span class="stat-label">Teaching Cards</span>
+    </div>
+    <div class="intro-stat">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Countries</span>
+    </div>
+    <div class="intro-stat">
+      <span class="stat-num">1</span>
+      <span class="stat-label">Practice</span>
+    </div>
+    <div class="intro-stat">
+      <span class="stat-num">∞</span>
+      <span class="stat-label">Moments of return</span>
+    </div>
   </div>
 </section>
 
-<!-- FEATURE STRIP — unchanged -->
+<!-- FEATURE STRIP -->
 <div class="feature-strip">
   <div class="feature-strip-inner">
-    <p class="feature-quote reveal">"So Hum, I am that. The breath has always known the answer. These spaces exist to help you hear it."</p>
+    <p class="feature-quote reveal">
+      "So Hum, I am that. The breath has always known the answer.
+      These spaces exist to help you hear it."
+    </p>
     <p class="feature-attr reveal reveal-delay-1">, The Sohamspaces Founding Note</p>
   </div>
 </div>
 
-<!-- ★ DECK SHOWCASE — NEW — placed between feature strip and offerings -->
-<section class="deck-showcase">
-  <div class="deck-showcase__image reveal">
-    <img
-      src="my_deck.PNG"
-      alt="Sohamspaces Yoga Card Deck — four cards laid out on a warm textured surface showing spiritual symbols and contemplative quotes"
-    />
-  </div>
-  <div class="deck-showcase__text">
-    <p class="ds-label reveal">The Deck</p>
-    <h2 class="reveal reveal-delay-1">83 teachings.<br><em>One each morning.</em></h2>
-    <p class="reveal reveal-delay-2">
-      Each card carries a teaching rooted in the oldest yoga traditions — gathered across
-      Portugal, India, Bali and Malaysia — distilled into a single moment of reflection.
-      Set your intention before stepping onto the mat, or carry it with you through your day.
-    </p>
-    <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="btn-primary reveal reveal-delay-3">Explore the Yoga Cards</a>
-  </div>
-</section>
-
-<!-- OFFERINGS — unchanged -->
+<!-- OFFERINGS -->
 <section class="offerings">
   <div class="offerings-header">
     <p class="section-label reveal" style="justify-content:center;">What We Offer</p>
-    <h2 class="offerings-title reveal reveal-delay-1">Tools for the<br><em>journey inward.</em></h2>
+    <h2 class="offerings-title reveal reveal-delay-1">
+      Tools for the<br><em>journey inward.</em>
+    </h2>
   </div>
   <div class="offerings-grid">
     <a href="https://adrimaia2000-del.github.io/sohamspaces/index.html" class="offering-card reveal">
       <div class="offering-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><rect x="2" y="1" width="14" height="16" rx="2"/><line x1="5" y1="6" x2="13" y2="6"/><line x1="5" y1="9" x2="13" y2="9"/><line x1="5" y1="12" x2="9" y2="12"/></svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <rect x="2" y="1" width="14" height="16" rx="2"/>
+          <line x1="5" y1="6" x2="13" y2="6"/><line x1="5" y1="9" x2="13" y2="9"/><line x1="5" y1="12" x2="9" y2="12"/>
+        </svg>
       </div>
       <p class="offering-title">The Yoga Cards</p>
       <p class="offering-desc">83 teachings gathered across Portugal, India, Bali and Malaysia. Each card sets an intention for your practice or your day.</p>
@@ -358,7 +307,9 @@
     </a>
     <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="offering-card reveal reveal-delay-1">
       <div class="offering-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><circle cx="9" cy="6" r="3"/><path d="M3 16c0-3.314 2.686-6 6-6s6 2.686 6 6"/></svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <circle cx="9" cy="6" r="3"/><path d="M3 16c0-3.314 2.686-6 6-6s6 2.686 6 6"/>
+        </svg>
       </div>
       <p class="offering-title">The Story</p>
       <p class="offering-desc">A journey from the Atlantic coast to the temples of Bali, and what was found along the way. The origin of every teaching in this space.</p>
@@ -366,7 +317,9 @@
     </a>
     <a href="https://adrimaia2000-del.github.io/sohamspaces/waitlist.html" class="offering-card reveal reveal-delay-2">
       <div class="offering-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25"><path d="M9 2l1.5 4h4l-3 2.5 1 4L9 10l-3.5 2.5 1-4L3 6h4L9 2z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--sage-dk)" stroke-width="1.25">
+          <path d="M9 2l1.5 4h4l-3 2.5 1 4L9 10l-3.5 2.5 1-4L3 6h4L9 2z"/>
+        </svg>
       </div>
       <p class="offering-title">Join the Waitlist</p>
       <p class="offering-desc">Be the first to know when the deck is ready to ship. One email. No noise. Just the moment it arrives.</p>
@@ -375,21 +328,30 @@
   </div>
 </section>
 
-<!-- PHILOSOPHY — unchanged -->
+<!-- PHILOSOPHY -->
 <section class="philosophy">
   <div class="philosophy-visual reveal" style="padding:0;overflow:hidden;">
     <img src="https://www.sohamspaces.com/photo-yoga.jpg" alt="Yoga practice">
   </div>
   <div>
     <p class="section-label reveal">Our Philosophy</p>
-    <h2 class="philosophy-title reveal reveal-delay-1">Wisdom is not<br>acquired. It is<br><em>remembered.</em></h2>
-    <p class="philosophy-body reveal reveal-delay-2">The oldest teachings of yoga are not complicated. They were never meant to be. They were designed to be carried, in the body, in the breath, in a single word held with attention throughout a day.</p>
-    <p class="philosophy-body reveal reveal-delay-2">Sohamspaces exists to make that carrying easier. Not to add more to your life, but to help you return to what has always been there.</p>
+    <h2 class="philosophy-title reveal reveal-delay-1">
+      Wisdom is not<br>acquired. It is<br><em>remembered.</em>
+    </h2>
+    <p class="philosophy-body reveal reveal-delay-2">
+      The oldest teachings of yoga are not complicated. They were never meant to be.
+      They were designed to be carried, in the body, in the breath, in a single word
+      held with attention throughout a day.
+    </p>
+    <p class="philosophy-body reveal reveal-delay-2">
+      Sohamspaces exists to make that carrying easier. Not to add more to your life,
+      but to help you return to what has always been there.
+    </p>
     <a href="https://adrimaia2000-del.github.io/sohamspaces/about.html" class="btn-primary reveal reveal-delay-3">Meet the founder</a>
   </div>
 </section>
 
-<!-- FOOTER — unchanged -->
+<!-- FOOTER -->
 <footer>
   <div style="display:flex;flex-direction:column;gap:0.4rem;">
     <a href="https://adrimaia2000-del.github.io/sohamspaces/home.html" class="footer-logo">Sohamspaces</a>
@@ -420,6 +382,7 @@
   reveals.forEach(el => io.observe(el));
   document.querySelectorAll('.hero .reveal').forEach((el, i) => { setTimeout(() => el.classList.add('visible'), 100 + i * 120); });
 
+  // Mobile hamburger menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (hamburger && mobileMenu) {
@@ -437,15 +400,45 @@
     });
   }
 
-  function setCookie(name, value, days) { const d = new Date(); d.setTime(d.getTime() + (days*24*60*60*1000)); document.cookie = name+"="+value+";expires="+d.toUTCString()+";path=/"; }
-  function getCookie(name) { const ca = document.cookie.split(";"); for (let c of ca) { c = c.trim(); if (c.startsWith(name+"=")) return c.substring(name.length+1); } return ""; }
-  function acceptCookies() { setCookie("cookie_consent","accepted",365); document.getElementById("cookie-banner").classList.remove("visible"); }
-  function declineCookies() { setCookie("cookie_consent","declined",365); document.getElementById("cookie-banner").classList.remove("visible"); }
-  window.addEventListener("load", function() { if (!getCookie("cookie_consent")) { setTimeout(() => { const banner = document.getElementById("cookie-banner"); if (banner) banner.classList.add("visible"); }, 1500); } });
+  // Cookie consent
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/";
+  }
+  function getCookie(name) {
+    const ca = document.cookie.split(";");
+    for (let c of ca) {
+      c = c.trim();
+      if (c.startsWith(name + "=")) return c.substring(name.length + 1);
+    }
+    return "";
+  }
+  function acceptCookies() {
+    setCookie("cookie_consent", "accepted", 365);
+    document.getElementById("cookie-banner").classList.remove("visible");
+  }
+  function declineCookies() {
+    setCookie("cookie_consent", "declined", 365);
+    document.getElementById("cookie-banner").classList.remove("visible");
+  }
+  // Show banner if no consent yet
+  window.addEventListener("load", function() {
+    if (!getCookie("cookie_consent")) {
+      setTimeout(() => {
+        const banner = document.getElementById("cookie-banner");
+        if (banner) banner.classList.add("visible");
+      }, 1500);
+    }
+  });
 </script>
 
+<!-- Cookie Banner -->
 <div class="cookie-banner" id="cookie-banner">
-  <p class="cookie-text">We use cookies to understand how visitors use our site (Google Analytics) and to remember your preferences. By continuing you agree to our <a href="https://www.sohamspaces.com/privacy-policy">Privacy Policy</a>.</p>
+  <p class="cookie-text">
+    We use cookies to understand how visitors use our site (Google Analytics) and to remember your preferences.
+    By continuing you agree to our <a href="https://www.sohamspaces.com/privacy-policy">Privacy Policy</a>.
+  </p>
   <div class="cookie-actions">
     <button class="cookie-decline" onclick="declineCookies()">Decline</button>
     <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
