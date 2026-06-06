@@ -937,6 +937,18 @@
     .nav-back { display: none !important; }
     .nav-hamburger { display: flex !important; }
   }
+
+  /* Cookie Banner */
+  .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--cream); border-top: 1px solid var(--sand-dk); padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; box-shadow: 0 -4px 24px rgba(30,30,26,0.08); transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); flex-wrap: wrap; }
+  .cookie-banner.visible { transform: translateY(0); }
+  .cookie-text { font-size: 0.78rem; font-weight: 300; color: var(--ink-mid); line-height: 1.7; max-width: 600px; }
+  .cookie-text a { color: var(--sage-dk); text-decoration: underline; text-underline-offset: 2px; }
+  .cookie-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+  .cookie-accept { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--sage-dk); border: none; padding: 0.65rem 1.5rem; border-radius: 2px; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .cookie-accept:hover { background: var(--ink); }
+  .cookie-decline { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mid); background: transparent; border: 1px solid var(--sand-dk); padding: 0.65rem 1.5rem; border-radius: 2px; cursor: pointer; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+  .cookie-decline:hover { border-color: var(--ink-mid); color: var(--ink); }
+  @media (max-width: 900px) { .cookie-banner { padding: 1.25rem 1.5rem; flex-direction: column; align-items: flex-start; } }
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M09HG30VR"></script>
@@ -1386,6 +1398,50 @@
       });
     });
   }
+
+  // Cookie consent
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/";
+  }
+  function getCookie(name) {
+    const ca = document.cookie.split(";");
+    for (let c of ca) {
+      c = c.trim();
+      if (c.startsWith(name + "=")) return c.substring(name.length + 1);
+    }
+    return "";
+  }
+  function acceptCookies() {
+    setCookie("cookie_consent", "accepted", 365);
+    document.getElementById("cookie-banner").classList.remove("visible");
+  }
+  function declineCookies() {
+    setCookie("cookie_consent", "declined", 365);
+    document.getElementById("cookie-banner").classList.remove("visible");
+  }
+  // Show banner if no consent yet
+  window.addEventListener("load", function() {
+    if (!getCookie("cookie_consent")) {
+      setTimeout(() => {
+        const banner = document.getElementById("cookie-banner");
+        if (banner) banner.classList.add("visible");
+      }, 1500);
+    }
+  });
 </script>
+
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-text">
+    We use cookies to understand how visitors use our site (Google Analytics) and to remember your preferences.
+    By continuing you agree to our <a href="https://www.sohamspaces.com/privacy-policy">Privacy Policy</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+    <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
 </body>
 </html>
