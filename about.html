@@ -65,9 +65,10 @@
   .journey-visual { background: var(--sand); display: flex; align-items: center; justify-content: center; min-height: 340px; max-height: 420px; position: relative; overflow: hidden; }
   .journey-visual-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
   .journey-place-name { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; font-style: italic; color: var(--ink); opacity: 0.12; position: absolute; bottom: 2rem; right: 2rem; line-height: 1; }
-  .journey-content { padding: 5rem; display: flex; flex-direction: column; justify-content: center; }
-  .journey-num { font-family: var(--serif); font-size: 5rem; font-weight: 300; color: var(--sand-dk); line-height: 1; margin-bottom: 1.5rem; }
-  .journey-title { font-family: var(--serif); font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 1.5rem; }
+  .journey-content { padding: 4rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .journey-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; }
+  .journey-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--sand-dk); line-height: 1; }
+  .journey-title { font-family: var(--serif); font-size: clamp(1.2rem, 1.8vw, 1.6rem); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 0; }
   .journey-title em { font-style: italic; color: var(--sage-dk); }
   .journey-body { font-size: 0.88rem; font-weight: 300; line-height: 2; color: var(--ink-mid); max-width: 42ch; }
 
@@ -222,8 +223,7 @@
       <span class="journey-place-name">Portugal</span>
     </div>
     <div class="journey-content">
-      <span class="journey-num reveal">01</span>
-      <h2 class="journey-title reveal reveal-delay-1">Portugal.<br><em>Where it began.</em></h2>
+      <div class="journey-header"><span class="journey-num reveal">01</span>&nbsp;<h2 class="journey-title reveal reveal-delay-1">Portugal. <em>Where it began.</em></h2></div>
       <p class="journey-body reveal reveal-delay-2">
         Growing up on the Silver Coast of Portugal, yoga was simply part of life.
         My mother ran her own yoga studio, and the practice was woven into daily life
@@ -241,8 +241,7 @@
       <span class="journey-place-name">India</span>
     </div>
     <div class="journey-content">
-      <span class="journey-num reveal">02</span>
-      <h2 class="journey-title reveal reveal-delay-1">India.<br><em>Where it deepened.</em></h2>
+      <div class="journey-header"><span class="journey-num reveal">02</span>&nbsp;<h2 class="journey-title reveal reveal-delay-1">India. <em>Where it deepened.</em></h2></div>
       <p class="journey-body reveal reveal-delay-2">
         Goa, home to the oldest yoga institute in the world, founded in 1918.
         Teachers whose words reshaped what yoga meant,
@@ -259,8 +258,7 @@
       <span class="journey-place-name">Bali</span>
     </div>
     <div class="journey-content">
-      <span class="journey-num reveal">03</span>
-      <h2 class="journey-title reveal reveal-delay-1">Bali.<br><em>Where it opened.</em></h2>
+      <div class="journey-header"><span class="journey-num reveal">03</span>&nbsp;<h2 class="journey-title reveal reveal-delay-1">Bali. <em>Where it opened.</em></h2></div>
       <p class="journey-body reveal reveal-delay-2">
         A month of volunteering, teaching yoga on a farm and living inside the real culture,
         not as a visitor but as someone with a role and a responsibility.
@@ -278,8 +276,7 @@
       <span class="journey-place-name">Malaysia</span>
     </div>
     <div class="journey-content">
-      <span class="journey-num reveal">04</span>
-      <h2 class="journey-title reveal reveal-delay-1">Malaysia.<br><em>Where it settled.</em></h2>
+      <div class="journey-header"><span class="journey-num reveal">04</span>&nbsp;<h2 class="journey-title reveal reveal-delay-1">Malaysia. <em>Where it settled.</em></h2></div>
       <p class="journey-body reveal reveal-delay-2">
         Teaching yoga in a hostel, for travellers passing through,
         people from every background and every level of experience.
@@ -298,8 +295,7 @@
       <span class="journey-place-name">United Kingdom</span>
     </div>
     <div class="journey-content">
-      <span class="journey-num reveal">05</span>
-      <h2 class="journey-title reveal reveal-delay-1">United Kingdom.<br><em>Where it found a home.</em></h2>
+      <div class="journey-header"><span class="journey-num reveal">05</span>&nbsp;<h2 class="journey-title reveal reveal-delay-1">United Kingdom. <em>Where it found a home.</em></h2></div>
       <p class="journey-body reveal reveal-delay-2">
         The UK gave the journey a place to land. Since 2024, teaching has become
         not just a practice but a purpose, sharing what was gathered across four countries
